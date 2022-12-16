@@ -14,7 +14,7 @@ Markdown for Visual Novel
 ### 어느 날
 `bgm: default`
 
-이렇게 타이틀만 있고 blockquote와 chr이 없는 경우
+// 이렇게 타이틀만 있고 blockquote와 chr이 없는 경우
 
 ---
 
