@@ -37,6 +37,7 @@ Markdown for Visual Novel
 `bgm="default"`
 
 // pageType = 'PLACE'
+
 // 이렇게 h3 태그만 있고 blockquote와 chr이 없는 경우 시간이나 장소를 나타내는 'PLACE' 타입의 페이지가 됩니다.
 
 ---
@@ -51,6 +52,7 @@ Markdown for Visual Novel
 > 여야, 일어나거라.
 
 // pageType = 'CHRLINE'
+
 // chr이 있는 경우 blockquote 태그가 있는지와 관계없이 'CHRLINE' 타입의 페이지가 됩니다.
 
 ---
@@ -61,4 +63,5 @@ Markdown for Visual Novel
 > 생긴 것만 보면 어떤 대학교의 강당 같은데...?
 
 // pageType = 'LINE'
+
 // h3 태그와 blockquote 태그가 있고 chr이 없는 경우 'LINE' 타입의 페이지가 됩니다.
