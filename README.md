@@ -8,7 +8,7 @@ Markdown for Visual Novel
 
 ## 예시
 
-ep/sample.md에 저장되어 있습니다만 다시 한번 꺼내 보겠습니다.
+[ep/sample.md](./md.html?ep=sample)에 저장되어 있습니다만 다시 한번 꺼내 보겠습니다.
 
 ---
 
