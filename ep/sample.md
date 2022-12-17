@@ -12,7 +12,7 @@
     재여: "Zaiyu"
   },
   facial: {
-    효과없음: "none",
+    무표정: "none",
     웃음: "smile",
     크게웃음: "laugh"
   },
