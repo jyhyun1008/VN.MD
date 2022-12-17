@@ -46,55 +46,45 @@ if (!ep) {
 
 function play(inputText){
 
-    var i = 0;
-
-    var options;
-    var title = [];
-    var subtitle = [];
-
-    var bgArray = [];
-    var nameArray = [];
-    var lineArray = [];
-    var chrArray = [];
-    var chrFacialArray = [];
-    var chrEffectArray = []
-    var bgmArray = [];
-    var soundArray = [];
-
     //---
-    md = md.replace(/[\-]{3}/g, 'i++;');
+    inputText = inputText.replace(/[\-]{3}/g, 'i++;');
 
     //options
-    md = md.replace(/^\s*\n\`\`\`/gm, 'options =');
-    md = md.replace(/^\`\`\`\s*\n/gm, ';');
+    inputText = inputText.replace(/^\s*\n\`\`\`/gm, 'options =');
+    inputText = inputText.replace(/^\`\`\`\s*\n/gm, ';');
 
     //bgm
-    md = md.replace(/[\`bgm\=]{1}([^\`]+)[\`]{1}/g, 'bgmArray[i] = "$1"');
+    inputText = inputText.replace(/\`bgm\=([^\`]+)[\`]{1}/g, 'bgmArray[i] = "$1";');
 
     //sound
-    md = md.replace(/[\`sound\=]{1}([^\`]+)[\`]{1}/g, 'soundArray[i] = "$1"');
+    inputText = inputText.replace(/\`sound\=([^\`]+)[\`]{1}/g, 'soundArray[i] = "$1";');
 
     //bg
-    md = md.replace(/[\`bg\=]{1}([^\`]+)[\`]{1}/g, 'bgArray[i] = "$1"');
+    inputText = inputText.replace(/\`bg\=([^\`]+)[\`]{1}/g, 'bgArray[i] = "$1";');
 
     //name
-    md = md.replace(/\n[\#]{3}(.+)/g, 'nameArray[i] = "$1";');
+    inputText = inputText.replace(/\n[\#]{3}(.+)/g, 'nameArray[i] = "$1";');
 
     //line1
-    md = md.replace(/\n\>(.+)\n\>(.+)\n\>(.+)/gm, 'lineArray[i] = [`$1`, `$2`, `$3`];');
-    md = md.replace(/\n\>(.+)\n\>(.+)/gm, 'lineArray[i] = [`$1`, `$2`];');
-    md = md.replace(/\n\>(.+)/gm, 'lineArray[i] = [`$1`];');
+    inputText = inputText.replace(/\n\>(.+)\n\>(.+)\n\>(.+)/gm, 'lineArray[i] = [`$1`, `$2`, `$3`];');
+    inputText = inputText.replace(/\n\>(.+)\n\>(.+)/gm, 'lineArray[i] = [`$1`, `$2`];');
+    inputText = inputText.replace(/\n\>(.+)/gm, 'lineArray[i] = [`$1`];');
 
     //character
-    md = md.replace(/\`(.+)\;(.+)\;(.+)\`\s\`(.+)\;(.+)\;(.+)\`\s\`(.+)\;(.+)\;(.+)\`/gm, 'chrArray[i] = [options.chr.$1, options.chr.$4, options.chr.$7]; chrFacialArray[i] = [options.facial.$2, options.facial.$5, options.facial.$8]; chrEffectArray = [options.facial.$3, options.facial.$6, options.facial.$9];');
-    md = md.replace(/\`(.+)\;(.+)\;(.+)\`\s\`(.+)\;(.+)\;(.+)\`/gm, 'chrArray[i] = [options.chr.$1, options.chr.$4]; chrFacialArray[i] = [options.facial.$2, options.facial.$5]; chrEffectArray = [options.facial.$3, options.facial.$6];');
-    md = md.replace(/\`(.+)\;(.+)\;(.+)\`/gm, 'chrArray[i] = [options.chr.$1]; chrFacialArray[i] = [options.facial.$2]; chrEffectArray = [options.facial.$3];');
+    inputText = inputText.replace(/\`(.+)\;\s(.+)\;\s(.+)\`\s\`(.+)\;\s(.+)\;\s(.+)\`\s\`(.+)\;\s(.+)\;\s(.+)\`/gm, 'chrArray[i] = [options.chr.$1, options.chr.$4, options.chr.$7]; chrFacialArray[i] = [options.facial.$2, options.facial.$5, options.facial.$8]; chrEffectArray = [options.facial.$3, options.facial.$6, options.facial.$9];');
+    inputText = inputText.replace(/\`(.+)\;\s(.+)\;\s(.+)\`\s\`(.+)\;\s(.+)\;\s(.+)\`/gm, 'chrArray[i] = [options.chr.$1, options.chr.$4]; chrFacialArray[i] = [options.facial.$2, options.facial.$5]; chrEffectArray = [options.facial.$3, options.facial.$6];');
+    inputText = inputText.replace(/\`(.+)\;\s(.+)\;\s(.+)\`/gm, 'chrArray[i] = [options.chr.$1]; chrFacialArray[i] = [options.facial.$2]; chrEffectArray = [options.facial.$3];');
 
     //subtitle
-    md = md.replace(/\n[\#]{2}(.+)/g, 'subtitle[i] = "$1";');
+    inputText = inputText.replace(/\n[\#]{2}(.+)/g, 'subtitle[i] = "$1";');
 
     //title
-    md = md.replace(/\n[\#]{1}(.+)/g, 'title[i] = "$1";');
+    inputText = inputText.replace(/\n[\#]{1}(.+)/g, 'title[i] = "$1";');
 
-    return eval(md);
+    //주석
+    inputText = inputText.replace(/\n[\/]{2}(.+)/g, '');
+
+    inputText = 'var i=0; var options; var title = []; var subtitle = []; var bgArray = []; var nameArray = []; var lineArray = []; var chrArray = []; var chrFacialArray = []; var chrEffectArray = [];var bgmArray = []; var soundArray = [];' + inputText
+
+    return eval(inputText);
 }

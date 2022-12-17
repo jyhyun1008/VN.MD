@@ -7,19 +7,19 @@
 
 ```
 {
-  balloon: default,
+  balloon: "default",
   theme: #0000FF,
   chr: {
     선생님: "laoshi",
     재여: "zaiyu"
   },
   facial: {
-    효과없음: none,
-    웃음: smile,
-    크게웃음: laugh
+    효과없음: "none",
+    웃음: "smile",
+    크게웃음: "laugh"
   },
   effect: {
-    효과없음: none,
+    효과없음: "none",
   }
 }
 ```
