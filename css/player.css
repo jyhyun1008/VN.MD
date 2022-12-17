@@ -235,7 +235,13 @@ body {
         font-size: 3.9vw;
     }
 
+
+    #prev {
+        top: calc(var(--vh) * 100 - 283px);
+    }
+
     #next {
+        top: calc(var(--vh) * 100 - 283px);
         left: calc(100vw - 10px - 2.5rem);
     }
 
