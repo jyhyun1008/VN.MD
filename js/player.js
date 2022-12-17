@@ -45,7 +45,6 @@ if (!ep) {
         code = play(out);
         console.log(code);
         eval(code);
-        console.log(lineArray);
         raw.addEventListener("click", function(){ window.location.href = './md.html?ep='+ep;});
 
         var typingBool = false;
@@ -296,7 +295,7 @@ function play(inputText){
                     'if (bgmArray[j] && bgmArray[j] != bgmArray[formerj]) {'+
                         'bgmArray[formerj].pause(); bgmArray[j].play();'+
                     '} else if (!bgmArray[j]) {'+
-                        'bgmArray[j] = new Audio(); bgmArray[formerj].pause(); console.log(bgmArray);'+
+                        'bgmArray[j] = new Audio(); bgmArray[formerj].pause();'+
                     '} if (soundArray[j]) {'+
                         'soundArray[j].loop = false; soundArray[j].play();'+
                     '}'+
