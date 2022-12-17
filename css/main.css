@@ -204,12 +204,12 @@ blockquote:before {
 	background: var(--accent);
 }
 
-@media only screen and (max-device-width: 500px) {
+@media all and (max-width: 500px) {
 	.main_container {
-		height: calc(var(--var, 1vh) * 100 - 140px);
+		height: calc(var(--vh) * 100 - 140px);
 	}
 
     .footer_navbar { 
-        top: calc(var(--var, 1vh) * 100 - 80px);
+        top: calc(var(--vh) * 100 - 80px);
     }
 }
