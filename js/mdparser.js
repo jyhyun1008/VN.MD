@@ -67,9 +67,9 @@ function getQueryStringObject() {
 }
   
 var qs = getQueryStringObject();
-var post = qs.post;
+var page = qs.page;
 
-if (!post) {
+if (!page) {
     var folderurl = "https://raw.githubusercontent.com/jyhyun1008/VN.MD/main/README.md"
     fetch(folderurl)
     .then(res => res.text())
@@ -78,11 +78,11 @@ if (!post) {
     })
     .catch(err => { throw err });
 } else {
-    var url = "https://raw.githubusercontent.com/jyhyun1008/jyhyun1008.github.io/main/post/"+post+".md";
+    var url = "https://raw.githubusercontent.com/jyhyun1008/VN.MD/main/page/"+page+".md";
     fetch(url)
     .then(res => res.text())
     .then((out) => {
-        document.querySelector(".title").innerText = post
+        document.querySelector(".title").innerText = page
         document.querySelector("#post").innerHTML += parseMd(out)
     })
     .catch(err => { throw err });
