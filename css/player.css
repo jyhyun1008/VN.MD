@@ -221,6 +221,10 @@ body {
 		height: calc(var(--vh) * 100 - 140px);
     }
 
+    .place {
+        top: calc(280px - var(--vh) * 50);
+    }
+
     #lineBox{
         top: calc(var(--vh) * 100 - 380px);
     }
