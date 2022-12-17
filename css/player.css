@@ -57,7 +57,7 @@ body {
     top: calc(100vh - 380px);
 }
 
-#name{
+.name{
     position: absolute;
     z-index: 4;
     background-color: var(--accent);
@@ -70,6 +70,23 @@ body {
     border-radius: 25px;
     padding: 0 20px;
     left: 50px;
+    overflow: hidden;
+}
+
+.place {
+    position: absolute;
+    z-index: 4;
+    background-color: var(--accent);
+    color: var(--white);
+    height: 2.7rem;
+    line-height: 2.7rem;
+    width: 100vw;
+    max-width: 200px;
+    font-size: 1.4rem;
+    border-radius: 25px;
+    padding: 0 20px;
+    top: calc(280px - 50vh);
+    left: 150px;
     overflow: hidden;
 }
 

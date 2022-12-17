@@ -73,8 +73,8 @@ function play(inputText){
     inputText = inputText.replace(/\n[\#]{3}(.+)/g, 'nameArray[i] = "$1";');
 
     //line1
-    inputText = inputText.replace(/\n\>(.+)\n\>(.+)\n\>(.+)/gm, 'lineArray[i] = [`$1`, `$2`, `$3`];');
-    inputText = inputText.replace(/\n\>(.+)\n\>(.+)/gm, 'lineArray[i] = [`$1`, `$2`];');
+    inputText = inputText.replace(/\n\>(.+)\n\n\>(.+)\n\n\>(.+)/gm, 'lineArray[i] = [`$1`, `$2`, `$3`];');
+    inputText = inputText.replace(/\n\>(.+)\n\n\>(.+)/gm, 'lineArray[i] = [`$1`, `$2`];');
     inputText = inputText.replace(/\n\>(.+)/gm, 'lineArray[i] = [`$1`];');
 
     //character
@@ -94,8 +94,9 @@ function play(inputText){
 
     inputText += 'j = 0;'+
                 'function pageLoad(j) {'+
+                    'var name = document.querySelector("#name");'+
                     'if (bgArray[j]) {'+
-                        'bg.style.backgroundImage = url(bgArray[j]);'+
+                        'bg.style.backgroundImage.url = "../assets/bg/"+bgArray[j]+".png";'+
                     '}'+
                     //bgm, sound
                     //TITLE
@@ -106,22 +107,22 @@ function play(inputText){
                     '}'+
                     //PLACE
                     'if (!lineArray[j] && !chrArray[j]) {'+
-                        'name.innerHTML = nameArray[j]; chr.style.display = "none"; line.style.display = "none"; name.style.top = 380 - 50*vh; name.style.left = 150;'+
+                        'name.innerHTML = nameArray[j]; chr.style.display = "none"; line.style.display = "none"; name.classList.remove("name"); name.classList.add("place");'+
                     //LINE
                     '} if (chrArray[j]) {'+
                         'chr.style.display = "block";'+
                         'if (chrArray[j].length == 1) {'+
-                            'chr.innerHTML = "<img src=`./assets/chr/"+chrArray[j][0]+"/"+chrFacialArray[j][0]+".png` id=`chr0`>";'
+                            'chr.innerHTML = "<img src=`../assets/chr/"+chrArray[j][0]+"/"+chrFacialArray[j][0]+".png` id=`chr0`>";'+
                         '} else if (chrArray[j].length == 1) {'+
-                            'chr.innerHTML = "<img src=`./assets/chr/"+chrArray[j][0]+"/"+chrFacialArray[j][0]+".png` id=`chr1`><img src=`./assets/chr/"+chrArray[j][1]+"/"+chrFacialArray[j][1]+".png` id=`chr2`>";'+
+                            'chr.innerHTML = "<img src=`../assets/chr/"+chrArray[j][0]+"/"+chrFacialArray[j][0]+".png` id=`chr1`><img src=`./assets/chr/"+chrArray[j][1]+"/"+chrFacialArray[j][1]+".png` id=`chr2`>";'+
                         '}'+
                     '} if (lineArray[j]) {'+
-                        'line.style.display = "block";  name.style.top = 0; name.style.left = 50; line1.innerHTML = lineArray[j][0]; line2.innerHTML = lineArray[j][1]; line3.innerHTML = lineArray[j][2];'+
+                        'line.style.display = "block"; name.classList.add("name"); name.classList.remove("place"); name.innerHTML = nameArray[j]; line1.innerHTML = lineArray[j][0]; line2.innerHTML = lineArray[j][1]; line3.innerHTML = lineArray[j][2];'+
                     '}'+
                 '} '+
                 'pageLoad(j);'+
-                'next.addEventListener("click", function(){j++; pageLoad(j);})'+
-                ''
+                'next.addEventListener("click", function(){j++; pageLoad(j);});'+
+                'prev.addEventListener("click", function(){j--; pageLoad(j);})'
 
     return inputText;
 }
