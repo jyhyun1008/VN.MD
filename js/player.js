@@ -298,7 +298,7 @@ function play(inputText){
                     '} else if (!bgmArray[j]) {'+
                         'bgmArray[j] = new Audio(); bgmArray[formerj].pause(); console.log(bgmArray);'+
                     '} if (soundArray[j]) {'+
-                        'var sound = new Audio("./assets/sound/"+soundArray[j]); sound.loop = false; sound.play();'+
+                        'soundArray[j].loop = false; soundArray[j].play();'+
                     '}'+
                     //TITLE
                     'if (titleArray[j]){'+
