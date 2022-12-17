@@ -137,6 +137,7 @@ blockquote:before {
 
 .main_container{
 	margin-top: 60px;
+	max-width: 500px;
     height: calc(100vh - 140px);
 	padding: 25px;
 	overflow:auto; 

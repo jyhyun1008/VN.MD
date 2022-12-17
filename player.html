@@ -8,6 +8,7 @@
         <meta name="keywords" content="키워드입력, 키워드2, 키워드3">
         <link rel="shortcut icon" href="파비콘 주소">
         <link rel="stylesheet" media="screen" href="./css/main.css">
+        <link rel="stylesheet" media="screen" href="./css/player.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
@@ -17,14 +18,33 @@
             <div class="navbar">
                 <div class="inner_navbar">
                     <div class="logo">
-                        <a href="#">비주얼노벨<span>.마크다운</span></a>
+                        <a href="./">비주얼노벨<span>.마크다운</span></a>
                     </div>
                 </div>
             </div>
 
             <div class="main_container">
-                <div class="content" id="player">
-
+                <div class="content">
+                    <div id="player">
+                        <div id="chr">
+                            <img src="./assets/chr/Zaiyu/Zaiyu.png" id="chr1">
+                            <img src="./assets/chr/Ranqiu/Ranqiu.png" id="chr2">
+                        </div>
+                        <div id="lineBox">
+                            <div id="name">이름</div>
+                            <div id="line">
+                                <div class="line" id="line1">예시 대사</div>
+                                <div class="line" id="line2">예시 대사</div>
+                                <div class="line" id="line3">예시 대사 한줄 넘어가면 짤립니다. 생각보다길군요.</div>
+                            </div>
+                        </div>
+                        <div id="controller">
+                            <div id="prev"><i class='bx bxs-chevron-left' ></i></div>
+                            <div id="next"><i class='bx bxs-chevron-right' ></i></div>
+                            <div id="mute"><i class='bx bxs-volume-mute' ></i></div>
+                            <div id="raw"><i class='bx bx-clipboard' ></i></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
