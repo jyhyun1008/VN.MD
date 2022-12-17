@@ -16,6 +16,10 @@ var qs = getQueryStringObject();
 var ep = qs.ep;
 
 var bg = document.querySelector('body');
+var title = document.querySelector('#title');
+var mainTitle = document.querySelector('#mainTitle');
+var subTitle = document.querySelector('#subTitle');
+
 var chr = document.querySelector('#chr');
 var lineBox = document.querySelector('#lineBox');
 var name = document.querySelector('#name');
@@ -30,7 +34,8 @@ var next = document.querySelector('#next');
 var mute = document.querySelector('#mute');
 var raw = document.querySelector('#raw');
 
-
+var vh = window.innerHeight * 0.01;
+var vw = window.innerWidth *0.01;
 
 if (!ep) {
     window.location.href = './';
@@ -39,7 +44,9 @@ if (!ep) {
     fetch(url)
     .then(res => res.text())
     .then((out) => {
-        console.log(play(out));
+        code = play(out);
+        console.log(code);
+        eval(code);
     })
     .catch(err => { throw err });
 }
@@ -71,20 +78,50 @@ function play(inputText){
     inputText = inputText.replace(/\n\>(.+)/gm, 'lineArray[i] = [`$1`];');
 
     //character
-    inputText = inputText.replace(/\`(.+)\;\s(.+)\;\s(.+)\`\s\`(.+)\;\s(.+)\;\s(.+)\`\s\`(.+)\;\s(.+)\;\s(.+)\`/gm, 'chrArray[i] = [options.chr.$1, options.chr.$4, options.chr.$7]; chrFacialArray[i] = [options.facial.$2, options.facial.$5, options.facial.$8]; chrEffectArray = [options.facial.$3, options.facial.$6, options.facial.$9];');
     inputText = inputText.replace(/\`(.+)\;\s(.+)\;\s(.+)\`\s\`(.+)\;\s(.+)\;\s(.+)\`/gm, 'chrArray[i] = [options.chr.$1, options.chr.$4]; chrFacialArray[i] = [options.facial.$2, options.facial.$5]; chrEffectArray = [options.facial.$3, options.facial.$6];');
     inputText = inputText.replace(/\`(.+)\;\s(.+)\;\s(.+)\`/gm, 'chrArray[i] = [options.chr.$1]; chrFacialArray[i] = [options.facial.$2]; chrEffectArray = [options.facial.$3];');
 
     //subtitle
-    inputText = inputText.replace(/\n[\#]{2}(.+)/g, 'subtitle[i] = "$1";');
+    inputText = inputText.replace(/\n[\#]{2}(.+)/g, 'subtitleArray[i] = "$1";');
 
     //title
-    inputText = inputText.replace(/\n[\#]{1}(.+)/g, 'title[i] = "$1";');
+    inputText = inputText.replace(/\n[\#]{1}(.+)/g, 'titleArray[i] = "$1";');
 
     //주석
     inputText = inputText.replace(/\n[\/]{2}(.+)/g, '');
 
-    inputText = 'var i=0; var options; var title = []; var subtitle = []; var bgArray = []; var nameArray = []; var lineArray = []; var chrArray = []; var chrFacialArray = []; var chrEffectArray = [];var bgmArray = []; var soundArray = [];' + inputText
+    inputText = 'var i=0; var options; var titleArray = []; var subtitleArray = []; var bgArray = []; var nameArray = []; var lineArray = []; var chrArray = []; var chrFacialArray = []; var chrEffectArray = [];var bgmArray = []; var soundArray = [];' + inputText + ''
 
-    return eval(inputText);
+    inputText += 'j = 0;'+
+                'function pageLoad(j) {'+
+                    'if (bgArray[j]) {'+
+                        'bg.style.backgroundImage = url(bgArray[j]);'+
+                    '}'+
+                    //bgm, sound
+                    //TITLE
+                    'if (titleArray[i]){'+
+                        'title.style.display = "block"; chr.style.display = "none"; lineBox.style.display = "none"; mainTitle.innerHTML = titleArray[i]; subTitle.innerHTML = subtitleArray[i];'+
+                    '} else {' +
+                        'title.style.display = "none"; lineBox.style.display = "block";'+
+                    '}'+
+                    //PLACE
+                    'if (!lineArray[j] && !chrArray[j]) {'+
+                        'name.innerHTML = nameArray[j]; chr.style.display = "none"; line.style.display = "none"; name.style.top = 380 - 50*vh; name.style.left = 150;'+
+                    //LINE
+                    '} if (chrArray[j]) {'+
+                        'chr.style.display = "block";'+
+                        'if (chrArray[j].length == 1) {'+
+                            'chr.innerHTML = "<img src=`./assets/chr/"+chrArray[j][0]+"/"+chrFacialArray[j][0]+".png` id=`chr0`>";'
+                        '} else if (chrArray[j].length == 1) {'+
+                            'chr.innerHTML = "<img src=`./assets/chr/"+chrArray[j][0]+"/"+chrFacialArray[j][0]+".png` id=`chr1`><img src=`./assets/chr/"+chrArray[j][1]+"/"+chrFacialArray[j][1]+".png` id=`chr2`>";'+
+                        '}'+
+                    '} if (lineArray[j]) {'+
+                        'line.style.display = "block";  name.style.top = 0; name.style.left = 50; line1.innerHTML = lineArray[j][0]; line2.innerHTML = lineArray[j][1]; line3.innerHTML = lineArray[j][2];'+
+                    '}'+
+                '} '+
+                'pageLoad(j);'+
+                'next.addEventListener("click", function(){j++; pageLoad(j);})'+
+                ''
+
+    return inputText;
 }
