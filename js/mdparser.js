@@ -82,7 +82,6 @@ if (!page) {
     fetch(url)
     .then(res => res.text())
     .then((out) => {
-        document.querySelector(".title").innerText = page
         document.querySelector("#post").innerHTML += parseMd(out)
     })
     .catch(err => { throw err });
