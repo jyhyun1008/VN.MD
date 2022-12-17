@@ -21,9 +21,9 @@ var lineBox = document.querySelector('#lineBox');
 var name = document.querySelector('#name');
 
 var line = document.querySelector('#line');
-var line1 = documnet.querySelector('#line1');
-var line2 = documnet.querySelector('#line2');
-var line3 = documnet.querySelector('#line3');
+var line1 = document.querySelector('#line1');
+var line2 = document.querySelector('#line2');
+var line3 = document.querySelector('#line3');
 
 var prev = document.querySelector('#prev');
 var next = document.querySelector('#next');
