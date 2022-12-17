@@ -203,3 +203,13 @@ blockquote:before {
 .footer_navbar .menu ul li a.active{
 	background: var(--accent);
 }
+
+@media only screen and (max-device-width: 500px) {
+	.main_container {
+		height: calc(var(--var, 1vh) * 100 - 140px);
+	}
+
+    .footer_navbar { 
+        top: calc(var(--var, 1vh) * 100 - 80px);
+    }
+}

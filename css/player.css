@@ -212,6 +212,7 @@ body {
     cursor: pointer;
 }
 
+
 @media all and (max-width: 500px) {
     #player{
         margin-left: 0px;
