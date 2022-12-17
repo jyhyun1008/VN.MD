@@ -8,8 +8,8 @@
   balloon: "default",
   theme: "#0000FF",
   chr: {
-    선생님: "laoshi",
-    재여: "zaiyu"
+    선생님: "Laoshi",
+    재여: "Zaiyu"
   },
   facial: {
     효과없음: "none",
@@ -25,7 +25,7 @@
 ---
 
 ### 어느 날
-`bgm=default`
+`bgm=default` `bg=lecture_room`
 
 ---
 
