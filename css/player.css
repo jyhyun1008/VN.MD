@@ -8,7 +8,7 @@
 }
 
 body {
-    background-image: url("../assets/bg/dorm.png");
+    background-color: #000;
     background-size: cover;
     background-position: center;
 }
@@ -24,6 +24,30 @@ body {
     overflow: hidden;
 }
 
+#title {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#mainTitle {
+    font-size: 2rem;
+    line-height: 3rem;
+    color: var(--accent);
+    text-shadow: -0.5px 0, 0 0.5px, 0.5px 0, 0 -0.5px;
+    text-align: center;
+}
+
+#subTitle {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: var(--white);
+}
+
 #chr{
     position: absolute;
     z-index: 1;
@@ -36,18 +60,18 @@ body {
     left: calc(135px - 200px);
 }
 
-#chr2{
-    position: absolute;
-    width: 400px;
-    top: calc(100vh - 800px);
-    left: calc(365px - 200px);
-}
-
 #chr0{
     position: absolute;
     width: 400px;
     top: calc(100vh - 800px);
     left: calc(250px - 200px);
+}
+
+#chr2{
+    position: absolute;
+    width: 400px;
+    top: calc(100vh - 800px);
+    left: calc(365px - 200px);
 }
 
 #lineBox{
@@ -141,6 +165,7 @@ body {
     background-color: var(--accent);
     top: calc(100vh - 283px);
     left: 10px;
+    cursor: pointer;
 }
 
 #next {
@@ -154,6 +179,7 @@ body {
     background-color: var(--accent);
     top: calc(100vh - 283px);
     left: calc(500px - 10px - 2.5rem);
+    cursor: pointer;
 }
 
 #mute {
@@ -168,6 +194,7 @@ body {
     background-color: var(--accent);
     top: 10px;
     left: 10px;
+    cursor: pointer;
 }
 
 #raw {
@@ -182,6 +209,7 @@ body {
     background-color: var(--accent);
     top: 10px;
     left: calc(20px + 2.5rem);
+    cursor: pointer;
 }
 
 @media all and (max-width: 500px) {
@@ -193,9 +221,30 @@ body {
     #line{
         width: 90vw;
         left: 5vw;
+        padding: 50px 10vw;
+    }
+
+    #line1, #line2, #line3 {
+        font-size: 3.9vw;
     }
 
     #next {
         left: calc(100vw - 10px - 2.5rem);
+    }
+
+    #chr1 {
+        left: calc(26vw - 200px);
+    }
+
+    #chr0 {
+        left: calc(50vw - 200px);
+    }
+
+    #chr2 {
+        left: calc(74vw - 200px);
+    }
+
+    .place {
+        left: calc(50vw - 100px);
     }
 }

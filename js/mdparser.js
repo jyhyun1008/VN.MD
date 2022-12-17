@@ -68,8 +68,9 @@ function getQueryStringObject() {
   
 var qs = getQueryStringObject();
 var page = qs.page;
+var ep = qs.ep;
 
-if (!page) {
+if (!page && !ep) {
     var folderurl = "https://raw.githubusercontent.com/jyhyun1008/VN.MD/main/README.md"
     fetch(folderurl)
     .then(res => res.text())
@@ -77,7 +78,7 @@ if (!page) {
         document.querySelector("#post").innerHTML += parseMd(out);
     })
     .catch(err => { throw err });
-} else {
+} else if (page) {
     var url = "https://raw.githubusercontent.com/jyhyun1008/VN.MD/main/page/"+page+".md";
     fetch(url)
     .then(res => res.text())
@@ -85,5 +86,15 @@ if (!page) {
         document.querySelector("#post").innerHTML += parseMd(out)
     })
     .catch(err => { throw err });
+} else if (ep) {
+    var url = "https://raw.githubusercontent.com/jyhyun1008/VN.MD/main/ep/"+ep+".md";
+    document.querySelector("#post").innerHTML += '<a href="./player.html?ep='+ep+'">플레이어 보기</a>'
+    fetch(url)
+    .then(res => res.text())
+    .then((out) => {
+        document.querySelector("#post").innerHTML += parseMd(out)
+    })
+    .catch(err => { throw err });
 }
+
 
