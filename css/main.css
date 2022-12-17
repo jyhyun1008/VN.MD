@@ -31,6 +31,11 @@
     line-height: 1.5rem;
 }
 
+body{
+	background: var(--bg);
+	color: var(--text);
+}
+
 b, strong, h1, h2, h3 {
     text-shadow: -0.2px 0, 0 0.2px, 0.2px 0, 0 -0.2px;
 }
@@ -58,9 +63,8 @@ h3 {
     margin: 4px 0;
 }
 
-body{
-	background: var(--bg);
-	color: var(--text);
+a {
+	color: var(--accent);
 }
 
 i {
