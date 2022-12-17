@@ -35,7 +35,7 @@ Markdown for Visual Novel
 ---
 
 ### 어느 날
-`bgm="default"`
+`bgm="default"` `bg="lecture_room"`
 
 // pageType = 'PLACE'
 
