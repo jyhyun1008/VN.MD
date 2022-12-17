@@ -214,9 +214,15 @@ body {
 
 
 @media all and (max-width: 500px) {
+
     #player{
         margin-left: 0px;
         left: 0;
+		height: calc(var(--vh) * 100 - 140px);
+    }
+
+    #lineBox{
+        top: calc(var(--vh) * 100 - 380px);
     }
 
     #line{
