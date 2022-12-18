@@ -41,10 +41,6 @@ function parseMd(md){
     //주석
     md = md.replace(/\n[\/]{2}(.+)/g, '');
     
-    //code
-    md = md.replace(/[\`]{1, 1}([^\`]+)[\`]{1, 1}/g, '<code>$1</code>');
-
-
 
     //pre
     
@@ -87,6 +83,9 @@ function parseMd(md){
 
         }
     }
+
+    //code
+    md = md.replace(/[\`]{1}([^\`]+)[\`]{1}/g, '<code>$1</code>');
 
     //br
     md = md.replace(/\n\n/g, '</p><p>');
