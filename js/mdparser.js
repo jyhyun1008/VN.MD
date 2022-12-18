@@ -84,7 +84,7 @@ function parseMd(md){
     }
 
     //code
-    md = md.replace(/[\`]{1}(.+)[\`]{1}/g, '<code>$1</code>');
+    md = md.replace(/[\`]{1}([^\`]+)[\`]{1}/g, '<code>$1</code>');
 
 
     //br
