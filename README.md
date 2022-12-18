@@ -1,7 +1,7 @@
 
 # VN.MD
 
-![](https://github.com/jyhyun1008/VN.MD/raw/main/vnmd.png)
+![아이콘](https://github.com/jyhyun1008/VN.MD/raw/main/vnmd.png)
 
 > Markdown for Visual Novel
 
