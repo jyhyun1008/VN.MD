@@ -71,6 +71,11 @@ i {
     font-size: inherit;
 }
 
+img {
+  width: 100%;
+  border-radius: 15px;
+}
+
 del {
     text-decoration: line-through;
 }
