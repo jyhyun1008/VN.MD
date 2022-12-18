@@ -7,7 +7,7 @@
 
 ### 캐릭터 스토리
 
-1. [제목](./player.html?episode=chr0101)
+- [제목](./player.html?episode=chr0101)
 
 # 캐릭터 2
 
@@ -15,4 +15,4 @@
 
 ### 캐릭터 스토리
 
-1. [제목](./player.html?episode=chr0201)
+- [제목](./player.html?episode=chr0201)
