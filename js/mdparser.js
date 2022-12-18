@@ -1,4 +1,6 @@
 function parseMd(md){
+
+    raw = md;
   
     //ul
     md = md.replace(/^\s*\n\*/gm, '<ul>\n*');
@@ -34,20 +36,61 @@ function parseMd(md){
     md = md.replace(/[\*]{2}([^\*]+)[\*]{2}/g, '<strong>$1</strong>');
     md = md.replace(/[\*]{1}([^\*]+)[\*]{1}/g, '<i>$1</i>');
     md = md.replace(/[\~]{2}([^\~]+)[\~]{2}/g, '<del>$1</del>');
-    
-    //pre
-    md = md.replace(/^\s*\n\`\`\`(([^\s]+))?/gm, '<pre class="code" id="$2">');
-    md = md.replace(/^\`\`\`\s*\n/gm, '</pre>\n\n');
-    
-    //code
-    md = md.replace(/[\`]{1}([^\`]+)[\`]{1}/g, '<code>$1</code>');
+
 
     //주석
     md = md.replace(/\n[\/]{2}(.+)/g, '');
 
+    //pre
+    
+    var mdpos = [];
+    var rawpos = [];
+    let pos1 = -1;
+    let k = 0;
+
+    var diff = [0]
+
+    while( (pos1 = raw.indexOf('\n```', pos1 + 1)) != -1 ) { 
+        if (k % 2 == 0){
+            rawpos[k] = pos1 + 4;
+        } else {
+            rawpos[k] = pos1;
+        }
+        k++;
+    }
+
+    let pos2 = -1;
+    let l = 0;
+
+    while( (pos2 = md.indexOf('\n```', pos2 + 1)) != -1 ) { 
+        if (l % 2 == 0){
+            mdpos[l] = pos2 - 1;
+        } else {
+            mdpos[l] = pos2 + 5;
+        }
+        l++;
+    }
+
+
+    for (var i = 0; i < mdpos.length; i++){
+        if (i % 2 == 0){
+            md = md.replace(md.substring(mdpos[i] - diff[i], mdpos[i+1] - diff[i]), '<pre class="code">'+raw.substring(rawpos[i], rawpos[i+1])+'</pre>');
+
+            var mdSubStringLength = mdpos[i+1] - mdpos[i];
+            var rawSubStringLength = rawpos[i+1] - rawpos[i] + '<pre class="code">'.length + '</pre>'.length;
+            diff[i+2] = diff[i] + mdSubStringLength - rawSubStringLength;
+
+        }
+    }
+
+    //code
+    md = md.replace(/[\`]{1}(.+)[\`]{1}/g, '<code>$1</code>');
+
+
     //br
     md = md.replace(/\n\n/g, '</p><p>');
     
+
     return md;
     
   }

@@ -47,6 +47,8 @@ if (!ep) {
         eval(code);
         raw.addEventListener("click", function(){ window.location.href = './md.html?ep='+ep;});
 
+        document.documentElement.style.setProperty('--theme', `${options.theme}`);
+
         var typingBool = false;
         var confirm1 = false;
 
