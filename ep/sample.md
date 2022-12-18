@@ -6,7 +6,7 @@
 ```
 {
   balloon: "default",
-  theme: "#5bd485",
+  theme: "#7174F6",
   chr: {
     선생님: "Laoshi",
     재여: "Zaiyu"
