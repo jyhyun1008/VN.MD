@@ -1,5 +1,8 @@
 
 # VN.MD
+
+![](https://github.com/jyhyun1008/VN.MD/raw/main/vnmd.png)
+
 > Markdown for Visual Novel
 
 ## 메인 컨셉
