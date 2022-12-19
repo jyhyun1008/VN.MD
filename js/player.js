@@ -1,3 +1,4 @@
+
 function getQueryStringObject() {
     var a = window.location.search.substr(1).split('&');
     if (a == "") return {};
@@ -38,7 +39,7 @@ var raw = document.querySelector('#raw');
 if (!ep) {
     window.location.href = './';
 } else {
-    var url = "https://raw.githubusercontent.com/jyhyun1008/movel/main/ep/"+ep+".md";
+    var url = "https://raw.githubusercontent.com/"+user+"/"+repo+"/main/ep/"+ep+".md";
     fetch(url)
     .then(res => res.text())
     .then((out) => {
