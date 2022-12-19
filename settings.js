@@ -26,7 +26,7 @@ var logo = '<span>M</span>OVEL';
 // 및 메뉴 아이콘 (https://boxicons.com/ 에서 아이콘을 찾아, 'Font' 탭을 복사해서 따옴표 안에 붙여넣어주세요.)
 var menu = [
   {
-    url: "",
+    url: "intro",
     ico: "<i class='bx bx-chalkboard' ></i>"
   }, {
     url: "character",
