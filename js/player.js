@@ -38,7 +38,7 @@ var raw = document.querySelector('#raw');
 if (!ep) {
     window.location.href = './';
 } else {
-    var url = "https://raw.githubusercontent.com/jyhyun1008/VN.MD/main/ep/"+ep+".md";
+    var url = "https://raw.githubusercontent.com/jyhyun1008/movel/main/ep/"+ep+".md";
     fetch(url)
     .then(res => res.text())
     .then((out) => {
