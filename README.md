@@ -9,6 +9,38 @@
 
 깃허브 페이지에서 쓴 **마크다운 문서**를 비주얼 노벨로 변환해 줍니다. 비주얼 노벨로 읽지 않고 마크다운 페이지에서 읽어도 불편함이 없도록 하는 것을 목표로 하고 있습니다.
 
+## 설치 및 사용법
+
+깃허브 페이지 또는 타 호스팅 서비스를 이용하실 수 있습니다.
+
+### 깃허브 페이지로 사용하기
+
+1. 자신의 깃허브 저장소 중 `<username>.github.io` 라는 레포지토리가 **없는** 상태에서 시작합니다.
+2. movel의 [깃허브 저장소](https://github.com/jyhyun1008/movel/)로 접속합니다.
+3. 오른쪽 위의 초록색 버튼, [Use this template > Create a new repository](https://github.com/jyhyun1008/movel/generate) 를 클릭합니다.
+4. `Repository name` 에 `<username>.github.io` 를 쓰고 `Create repository from template` 을 클릭합니다.
+
+### 깃허브 페이지로 사용하기 (2차 주소)
+
+1. 자신의 깃허브 페이지 `<username>.github.io` 가 배포되고 있는 상태에서 ([이 페이지](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) 참조) 시작합니다.
+2. movel의 [깃허브 저장소](https://github.com/jyhyun1008/movel/)로 접속합니다.
+3. 오른쪽 위의 초록색 버튼, [Use this template > Create a new repository](https://github.com/jyhyun1008/movel/generate) 를 클릭합니다.
+4. `Repository name` 에 본인의 프로젝트 이름을 쓰고 `Create repository from template` 을 클릭합니다.
+
+### 타 호스팅 서비스에서 사용하기 (깃허브 아이디가 있는 경우)
+
+이런 경우 타 
+
+1. 자신의 깃허브 아이디 `username` 가 있는 상태에서 시작합니다.
+2. 프로젝트 이름으로 [깃허브 저장소를 생성](https://github.com/new)합니다. 이때 `Add a README file`을 체크해주면 `README.md` 파일이 생겨 있습니다.
+3. 저장소 내에서 `page/main.md`와 `ep/<첫번째 에피소드 이름>.md`를 생성합니다. 이 이름으로 파일을 생성하면 폴더도 자동으로 생성됩니다. 내용은 비워두셔도 괜찮습니다.
+4. movel의 [깃허브 저장소](https://github.com/jyhyun1008/movel/)로 접속합니다.
+5. 오른쪽 위의 `code` 버튼을 통해 로컬 폴더 내에 movel 저장소를 클론하거나, .zip 파일을 다운로드받아 압축 해제 합니다.
+6. `settings.js` 파일을 입맛대로 수정합니다. 이때 `user`는 자신의 깃허브 아이디, `repo`는 (2)에서 생성한 저장소 이름으로 합니다.
+7. 로컬 폴더 내의 `page` 폴더와 `ep` 폴더는 필요없으므로 삭제합니다.
+8. 호스팅 서비스에 저장소 폴더를 업로드합니다.
+9. 
+
 # 기능
 
 ## 세로보기
