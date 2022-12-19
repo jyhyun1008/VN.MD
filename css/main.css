@@ -92,6 +92,7 @@ pre {
 	color: var(--accent);
 	background-color: var(--bg);
 	border-radius: 25px;
+	overflow-x: scroll;
     	word-break: break-all;
 }
 
