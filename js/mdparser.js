@@ -1,3 +1,7 @@
+
+var user = 'jyhyun1008';
+var repo = 'movel';
+
 function parseMd(md){
 
     raw = md;
@@ -114,15 +118,15 @@ var page = qs.page;
 var ep = qs.ep;
 
 if (!page && !ep) {
-    var folderurl = "https://raw.githubusercontent.com/jyhyun1008/movel/main/README.md"
-    fetch(folderurl)
+    var url = "https://raw.githubusercontent.com/"+user+"/"+repo+"/main/README.md"
+    fetch(url)
     .then(res => res.text())
     .then((out) => {
         document.querySelector("#post").innerHTML += parseMd(out);
     })
     .catch(err => { throw err });
 } else if (page) {
-    var url = "https://raw.githubusercontent.com/jyhyun1008/movel/main/page/"+page+".md";
+    var url = "https://raw.githubusercontent.com/"+user+"/"+repo+"/main/page/"+page+".md";
     fetch(url)
     .then(res => res.text())
     .then((out) => {
@@ -130,7 +134,7 @@ if (!page && !ep) {
     })
     .catch(err => { throw err });
 } else if (ep) {
-    var url = "https://raw.githubusercontent.com/jyhyun1008/VN.MD/main/ep/"+ep+".md";
+    var url = "https://raw.githubusercontent.com/"+user+"/"+repo+"/main/ep/"+ep+".md";
     document.querySelector("#post").innerHTML += '<a href="./player.html?ep='+ep+'">플레이어 보기</a>'
     fetch(url)
     .then(res => res.text())
