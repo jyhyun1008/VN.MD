@@ -1,7 +1,4 @@
 
-var user = 'jyhyun1008';
-var repo = 'movel';
-
 function parseMd(md){
 
     raw = md;
