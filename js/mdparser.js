@@ -114,7 +114,7 @@ var page = qs.page;
 var ep = qs.ep;
 
 if (!page && !ep) {
-    var folderurl = "https://raw.githubusercontent.com/jyhyun1008/VN.MD/main/README.md"
+    var folderurl = "https://raw.githubusercontent.com/jyhyun1008/movel/main/README.md"
     fetch(folderurl)
     .then(res => res.text())
     .then((out) => {
@@ -122,7 +122,7 @@ if (!page && !ep) {
     })
     .catch(err => { throw err });
 } else if (page) {
-    var url = "https://raw.githubusercontent.com/jyhyun1008/VN.MD/main/page/"+page+".md";
+    var url = "https://raw.githubusercontent.com/jyhyun1008/movel/main/page/"+page+".md";
     fetch(url)
     .then(res => res.text())
     .then((out) => {
