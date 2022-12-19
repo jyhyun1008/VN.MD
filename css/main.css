@@ -242,6 +242,7 @@ blockquote:before {
 .footer_navbar .menu ul{
 	display: flex;
 	justify-content: space-evenly;
+	list-style: none;
 }
 
 .footer_navbar .menu ul li a{
