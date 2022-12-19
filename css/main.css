@@ -121,6 +121,42 @@ blockquote:before {
 	margin: -5px 10px 0px -10px;
   }
 
+.item ul {
+	display: block;
+	list-style: none; /* Remove default bullets */
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 40px;
+}
+
+.item ul li::before {
+	content: "\2574";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+	color: var(--green); /* Change the color */
+	font-weight: bold; /* If you want it to be bold */
+	display: inline-block; /* Needed to add space between the bullet and the text */
+	width: 1em; /* Also needed for space (tweak if needed) */
+	margin-left: -1em; /* Also needed for space (tweak if needed) */
+  }
+
+.item ul li {
+	margin-bottom: 10px;
+}
+
+.item ol {
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 40px;
+}
+
+.item ol li {
+	margin-bottom: 10px;
+}
+
 .navbar{
 	z-index: 9;
 	width: 100%;
