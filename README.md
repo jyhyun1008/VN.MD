@@ -15,31 +15,48 @@
 
 ### 깃허브 페이지로 사용하기
 
-1. 자신의 깃허브 저장소 중 `<username>.github.io` 라는 레포지토리가 **없는** 상태에서 시작합니다.
+이 경우 `<아이디>.github.io` 에 접속하면 모블 페이지를 보실 수 있습니다. **깃허브 아이디를 비주얼 노벨 연재 목적으로만 개설하신 게 아니라면 별로 추천드리고 싶지 않습니다.**
+
+1. 자신의 깃허브 저장소 중 `<아이디>.github.io` 라는 레포지토리가 **없는** 상태에서 시작합니다.
 2. movel의 [깃허브 저장소](https://github.com/jyhyun1008/movel/)로 접속합니다.
 3. 오른쪽 위의 초록색 버튼, [Use this template > Create a new repository](https://github.com/jyhyun1008/movel/generate) 를 클릭합니다.
-4. `Repository name` 에 `<username>.github.io` 를 쓰고 `Create repository from template` 을 클릭합니다.
+4. `Repository name` 에 `<아이디>.github.io` 를 쓰고 `Create repository from template` 을 클릭합니다.
 
 ### 깃허브 페이지로 사용하기 (2차 주소)
 
-1. 자신의 깃허브 페이지 `<username>.github.io` 가 배포되고 있는 상태에서 ([이 페이지](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) 참조) 시작합니다.
+이 경우 `<아이디>.github.io/<프로젝트 이름>` 에 접속하면 모블 페이지를 보실 수 있습니다. 저도 사용하고 있고, 가장 추천드리는 방법입니다.
+
+1. 자신의 깃허브 페이지 `<아이디>.github.io` 가 배포되고 있는 상태에서 ([이 페이지](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) 참조) 시작합니다.
 2. movel의 [깃허브 저장소](https://github.com/jyhyun1008/movel/)로 접속합니다.
 3. 오른쪽 위의 초록색 버튼, [Use this template > Create a new repository](https://github.com/jyhyun1008/movel/generate) 를 클릭합니다.
 4. `Repository name` 에 본인의 프로젝트 이름을 쓰고 `Create repository from template` 을 클릭합니다.
 
 ### 타 호스팅 서비스에서 사용하기 (깃허브 아이디가 있는 경우)
 
-이런 경우 타 
+이 경우 해당 호스팅 서비스에서는 페이지만 띄워주고, 컨텐츠들은 모두 깃허브 저장소에서 관리됩니다. 깃허브 저장소에서 마크다운 파일의 수정을 쉽게 하실 수 있습니다.
 
-1. 자신의 깃허브 아이디 `username` 가 있는 상태에서 시작합니다.
-2. 프로젝트 이름으로 [깃허브 저장소를 생성](https://github.com/new)합니다. 이때 `Add a README file`을 체크해주면 `README.md` 파일이 생겨 있습니다.
-3. 저장소 내에서 `page/main.md`와 `ep/<첫번째 에피소드 이름>.md`를 생성합니다. 이 이름으로 파일을 생성하면 폴더도 자동으로 생성됩니다. 내용은 비워두셔도 괜찮습니다.
-4. movel의 [깃허브 저장소](https://github.com/jyhyun1008/movel/)로 접속합니다.
-5. 오른쪽 위의 `code` 버튼을 통해 로컬 폴더 내에 movel 저장소를 클론하거나, .zip 파일을 다운로드받아 압축 해제 합니다.
-6. `settings.js` 파일을 입맛대로 수정합니다. 이때 `user`는 자신의 깃허브 아이디, `repo`는 (2)에서 생성한 저장소 이름으로 합니다.
-7. 로컬 폴더 내의 `page` 폴더와 `ep` 폴더는 필요없으므로 삭제합니다.
-8. 호스팅 서비스에 저장소 폴더를 업로드합니다.
-9. 
+1. 자신의 깃허브 아이디 `<아이디>` 가 있는 상태에서 시작합니다.
+2. 프로젝트 이름으로 [깃허브 저장소를 생성](https://github.com/new)합니다. 이때 `Add a README file`을 체크해주면 `README.md` 파일이 생겨 있습니다. 이 파일은 여러분의 프로젝트를 소개하는 용도로 사용됩니다.
+3. 저장소 내에서 `page/main.md`를 생성합니다. 이 이름으로 파일을 생성하면 폴더도 자동으로 생성됩니다. 내용은 비워두셔도 괜찮습니다. 이 파일은 메인 스토리의 목록을 보여주는 용도로 사용됩니다. `main` 대신 다른 이름을 사용하셔도 되고, 추천드리지는 않습니다만 한글을 사용하셔도 됩니다.
+4. 저장소 내에서 `ep/<첫번째 에피소드 이름>.md`를 생성합니다. 
+5. movel의 [깃허브 저장소](https://github.com/jyhyun1008/movel/)로 접속합니다.
+6. 오른쪽 위의 `code` 버튼을 통해 로컬 폴더 내에 movel 저장소를 클론하거나, .zip 파일을 다운로드받아 압축 해제 합니다.
+7. `settings.js` 파일을 입맛대로 수정합니다. 이때 `user`는 자신의 깃허브 아이디, `repo`는 (2)에서 생성한 저장소 이름으로 합니다.
+8. 로컬 폴더 내의 `page` 폴더와 `ep` 폴더는 필요없으므로 삭제합니다.
+9. 호스팅 서비스에 저장소 폴더를 업로드합니다. 그러면 `example.com/movel/` 로 접속하실 수 있습니다.
+10. 깃허브 저장소의 `page` 폴더에서 페이지를, `ep` 폴더에서 에피소드를 관리합니다. 공개할 에피소드는 (3)에서 만든 `page/main.md` 페이지에 링크를 걸어 줍니다.
+
+### 타 호스팅 서비스에서 사용하기 (깃허브 아이디가 없는 경우)
+
+**가능은 하지만 세 번 이상의 `.js` 파일 수정이 필요한데다 마크다운 파일을 계속 따로 업로드해야 하므로 정말 추천드리지 않는 방법입니다.**
+
+1. movel의 [깃허브 저장소](https://github.com/jyhyun1008/movel/)로 접속합니다.
+2. 오른쪽 위의 `code` 버튼을 통해 로컬 폴더 내에 movel 저장소를 클론하거나, .zip 파일을 다운로드받아 압축 해제 합니다.
+3. `settings.js` 파일을 입맛대로 수정합니다. 이때 `user`와 `repo`는 필요없으므로 지웁니다.
+4. `js/player.js` 파일에서 42행 부근의 `https://raw.githubusercontent.com/"+user+"/"+repo+"/main` 부분을 `http://<호스팅 사이트 주소>/movel`로 치환합니다.
+5. `js/mdparser.js` 파일에서 118행, 126행, 134행 부근의 `https://raw.githubusercontent.com/"+user+"/"+repo+"/main` 부분을 모두 `http://<호스팅 사이트 주소>/movel`로 치환합니다.
+6. 호스팅 서비스에 저장소 폴더를 업로드합니다. 그러면 `example.com/movel/` 로 접속하실 수 있습니다.
+7. `page` 폴더에서 페이지를, `ep` 폴더에서 에피소드를 관리합니다. 공개할 에피소드는 (3)에서 만든 `page/main.md` 페이지에 링크를 걸어 줍니다.
 
 # 기능
 
