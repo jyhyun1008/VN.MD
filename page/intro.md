@@ -3,7 +3,7 @@
 
 ![MOVEL](https://github.com/jyhyun1008/VN.MD/raw/main/vnmd_concept.png)
 
-MOVEL의 세계에 어서오세요!
+**MOVEL**의 세계에 어서오세요!
 
 # Q&A
 
@@ -13,4 +13,4 @@ MOVEL의 세계에 어서오세요!
 
 ## 어떻게 사용하나요?
 
-MOVEL의 [홈페이지](http://gwansangg.am/movel/) 에 접속해주세요. 대략적인 사용방법을 적어놓았어요.
+**MOVEL**의 [홈페이지](http://gwansangg.am/movel/) 에 접속해주세요. 대략적인 사용방법을 적어놓았어요.
