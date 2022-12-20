@@ -244,6 +244,9 @@ if (!ep) {
 
 function play(inputText){
 
+    //아무것도 아닌것
+    inputText = inputText.replace(/\n[^(\`|\*\s|\d\.\s|\#|\<|\-)](.+)\n/g, '\n\n');
+
     //---
     inputText = inputText.replace(/[\-]{3}/g, 'i++;');
 
