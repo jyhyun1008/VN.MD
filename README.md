@@ -22,6 +22,8 @@
 3. 오른쪽 위의 초록색 버튼, [Use this template > Create a new repository](https://github.com/jyhyun1008/movel/generate) 를 클릭합니다.
 4. `Repository name` 에 `<아이디>.github.io` 를 쓰고 `Create repository from template` 을 클릭합니다.
 5. 생성된 저장소 메뉴 중 `settings` 로 들어가서, 왼쪽 사이드바에서 `pages` 를 클릭합니다.
+6. `Branch` 부분을 보시면 `None` 으로 셋팅되어 있을 겁니다. 이걸 `main` 으로 바꾸고 `Save`를 클릭합니다.
+7. 깃허브 저장소의 `page` 폴더에서 페이지를, `ep` 폴더에서 에피소드를 관리합니다. 공개할 에피소드는 `page/main.md` 페이지에 링크를 걸어 줍니다.
 
 ## 깃허브 페이지로 사용하기 (2차 주소)
 
@@ -32,6 +34,8 @@
 3. 오른쪽 위의 초록색 버튼, [Use this template > Create a new repository](https://github.com/jyhyun1008/movel/generate) 를 클릭합니다.
 4. `Repository name` 에 본인의 프로젝트 이름을 쓰고 `Create repository from template` 을 클릭합니다.
 5. 생성된 저장소 메뉴 중 `settings` 로 들어가서, 왼쪽 사이드바에서 `pages` 를 클릭합니다.
+6. `Branch` 부분을 보시면 `None` 으로 셋팅되어 있을 겁니다. 이걸 `main` 으로 바꾸고 `Save`를 클릭합니다.
+7. 깃허브 저장소의 `page` 폴더에서 페이지를, `ep` 폴더에서 에피소드를 관리합니다. 공개할 에피소드는 `page/main.md` 페이지에 링크를 걸어 줍니다.
 
 ## 타 호스팅 서비스에서 사용하기 (깃허브 아이디가 있는 경우)
 
@@ -58,7 +62,7 @@
 4. `js/player.js` 파일에서 42행 부근의 `https://raw.githubusercontent.com/"+user+"/"+repo+"/main` 부분을 `http://<호스팅 사이트 주소>/movel`로 치환합니다.
 5. `js/mdparser.js` 파일에서 118행, 126행, 134행 부근의 `https://raw.githubusercontent.com/"+user+"/"+repo+"/main` 부분을 모두 `http://<호스팅 사이트 주소>/movel`로 치환합니다.
 6. 호스팅 서비스에 저장소 폴더를 업로드합니다. 그러면 `example.com/movel/` 로 접속하실 수 있습니다.
-7. `page` 폴더에서 페이지를, `ep` 폴더에서 에피소드를 관리합니다. 공개할 에피소드는 (3)에서 만든 `page/main.md` 페이지에 링크를 걸어 줍니다.
+7. `page` 폴더에서 페이지를, `ep` 폴더에서 에피소드를 관리합니다. 공개할 에피소드는 `page/main.md` 페이지에 링크를 걸어 줍니다.
 
 # 기능
 
