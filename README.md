@@ -21,6 +21,7 @@
 2. movel의 [깃허브 저장소](https://github.com/jyhyun1008/movel/)로 접속합니다.
 3. 오른쪽 위의 초록색 버튼, [Use this template > Create a new repository](https://github.com/jyhyun1008/movel/generate) 를 클릭합니다.
 4. `Repository name` 에 `<아이디>.github.io` 를 쓰고 `Create repository from template` 을 클릭합니다.
+5. 생성된 저장소 메뉴 중 `settings` 로 들어가서, 왼쪽 사이드바에서 `pages` 를 클릭합니다.
 
 ## 깃허브 페이지로 사용하기 (2차 주소)
 
@@ -30,6 +31,7 @@
 2. movel의 [깃허브 저장소](https://github.com/jyhyun1008/movel/)로 접속합니다.
 3. 오른쪽 위의 초록색 버튼, [Use this template > Create a new repository](https://github.com/jyhyun1008/movel/generate) 를 클릭합니다.
 4. `Repository name` 에 본인의 프로젝트 이름을 쓰고 `Create repository from template` 을 클릭합니다.
+5. 생성된 저장소 메뉴 중 `settings` 로 들어가서, 왼쪽 사이드바에서 `pages` 를 클릭합니다.
 
 ## 타 호스팅 서비스에서 사용하기 (깃허브 아이디가 있는 경우)
 
