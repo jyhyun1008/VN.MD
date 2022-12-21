@@ -180,7 +180,7 @@ blockquote:before {
 
 .navbar .logo a{
 	font-weight: 700;
-	font-size: 24px;
+	font-size: 30px;
 	letter-spacing: 3px;
 	color: var(--white);
 }
