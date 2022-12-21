@@ -39,5 +39,5 @@ for (var i = 0; i < menu.length; i++){
     if (i == parseInt(menu.length / 2)) {
         navbar.innerHTML += "<li><a href='./' class='active'><i class='bx bx-home-alt'></i></a></li>";
     }
-    navbar.innerHTML += "<li><a href='./md.html?page=" + menu[i].url + "'>" + menu[i].ico + "</a></li>";
+    navbar.innerHTML += "<li><a href='./index.html?page=" + menu[i].url + "'>" + menu[i].ico + "</a></li>";
 }
