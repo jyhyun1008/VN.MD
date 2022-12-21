@@ -170,7 +170,7 @@ function chr_eff(chrId, effect){
     case 'jump':
       jump(chrId);
       break;
-    default;
+    default:
       document.querySelector(chrId).style.top = Origin.top;
       document.querySelector(chrId).style.left = Origin.left;
       break;
