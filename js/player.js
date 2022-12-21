@@ -16,32 +16,30 @@ function getQueryStringObject() {
 var qs = getQueryStringObject();
 var ep = qs.ep;
 
-var content = document.queyrSelector('.content');
-content.innerHTML = `<div id="player"><div id="title"><div id="mainTitle"></div><div id="subTitle"></div></div><div id="chr"></div><div id="lineBox"><div id="name" class="name">이름</div><div id="line"><div class="line" id="line1"></div><div class="line" id="line2"></div><div class="line" id="line3"></div></div></div><div id="controller"><div id="prev"><i class="bx bxs-chevron-left" ></i></div><div id="next"><i class='bx bxs-chevron-right' ></i></div><div id="mute"><i class='bx bxs-volume-mute' ></i></div><div id="raw"><i class="bx bx-clipboard" ></i></div></div></div>`;
+if (ep) {
 
-var bg = document.querySelector('body');
-var title = document.querySelector('#title');
-var mainTitle = document.querySelector('#mainTitle');
-var subTitle = document.querySelector('#subTitle');
+    var content = document.querySelector('.content');
+    content.innerHTML = `<div id="player"><div id="title"><div id="mainTitle"></div><div id="subTitle"></div></div><div id="chr"></div><div id="lineBox"><div id="name" class="name">이름</div><div id="line"><div class="line" id="line1"></div><div class="line" id="line2"></div><div class="line" id="line3"></div></div></div><div id="controller"><div id="prev"><i class="bx bxs-chevron-left" ></i></div><div id="next"><i class='bx bxs-chevron-right' ></i></div><div id="mute"><i class='bx bxs-volume-mute' ></i></div><div id="raw"><i class="bx bx-clipboard" ></i></div></div></div>`;
 
-var chr = document.querySelector('#chr');
-var lineBox = document.querySelector('#lineBox');
-var name = document.querySelector('#name');
+    var bg = document.querySelector('body');
+    var title = document.querySelector('#title');
+    var mainTitle = document.querySelector('#mainTitle');
+    var subTitle = document.querySelector('#subTitle');
 
-var line = document.querySelector('#line');
-var line1 = document.querySelector('#line1');
-var line2 = document.querySelector('#line2');
-var line3 = document.querySelector('#line3');
+    var chr = document.querySelector('#chr');
+    var lineBox = document.querySelector('#lineBox');
+    var name = document.querySelector('#name');
 
-var prev = document.querySelector('#prev');
-var next = document.querySelector('#next');
-var mute = document.querySelector('#mute');
-var raw = document.querySelector('#raw');
+    var line = document.querySelector('#line');
+    var line1 = document.querySelector('#line1');
+    var line2 = document.querySelector('#line2');
+    var line3 = document.querySelector('#line3');
 
+    var prev = document.querySelector('#prev');
+    var next = document.querySelector('#next');
+    var mute = document.querySelector('#mute');
+    var raw = document.querySelector('#raw');
 
-if (!ep) {
-    window.location.href = './';
-} else {
     var url = "https://raw.githubusercontent.com/"+user+"/"+repo+"/main/ep/"+ep+".md";
     fetch(url)
     .then(res => res.text())
