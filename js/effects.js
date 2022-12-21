@@ -49,6 +49,7 @@ function effect(effectArray) {
 //----- 캐릭터 이펙트(주로 애니메이션) -----
 
 function moveToCenter(chrId){
+  var start = null;
   var startP = document.querySelector(chrId).style.left;
   var endP = 50*vw - 200;
   
@@ -66,6 +67,7 @@ function moveToCenter(chrId){
 }
 
 function moveToRight(chrId){
+  var start = null;
   var startP = document.querySelector(chrId).style.left;
   var endP = 100*vw;
   
@@ -81,6 +83,7 @@ function moveToRight(chrId){
 }
 
 function moveToleft(chrId){
+  var start = null;
   var startP = document.querySelector(chrId).style.left;
   var endP = -400;
   
@@ -96,6 +99,7 @@ function moveToleft(chrId){
 }
 
 function passToRight(chrId){
+  var start = null;
   var startP = -400;
   var endP = 100*vw;
   
@@ -111,6 +115,7 @@ function passToRight(chrId){
 }
 
 function passToLeft(chrId){
+  var start = null;
   var startP = 100*vw;
   var endP = -400;
   
@@ -126,6 +131,7 @@ function passToLeft(chrId){
 }
 
   function jump(chrId){
+    var start = null;
     var startP = document.querySelector(chrId).style.top;
     var speed = 10;
     
