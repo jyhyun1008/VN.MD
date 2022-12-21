@@ -43,7 +43,6 @@ function effect(){
       break;
     default:
       none();
-      break;
   }
 }
 
@@ -173,6 +172,5 @@ function chr_eff(chrId, effect){
     default:
       document.querySelector(chrId).style.top = Origin.top;
       document.querySelector(chrId).style.left = Origin.left;
-      break;
   }
 }
