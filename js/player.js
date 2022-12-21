@@ -80,20 +80,7 @@ if (ep) {
                 bg.style.backgroundImage = "none";
             }
             if (effectArray[j] && effectArray[j] != effectArray[formerj]) {
-                switch(effectArray[j]) {
-                    case 'gray':
-                        grayScale();
-                        break;
-                    case 'blur':
-                        blur();
-                        break;
-                    case 'sepia':
-                        sepia();
-                        break;
-                    case default:
-                        none();
-                        break;
-                }
+                effect();
             } else {
                 none();
             }
@@ -120,8 +107,11 @@ if (ep) {
                     chr.style.display = "block";
                     if (chrArray[j].length == 1) {
                         chr.innerHTML = "<img src=./assets/chr/"+chrArray[j][0]+"/"+chrFacialArray[j][0]+".png id=chr0>";
+                        chr_eff('#chr0', chrEffectArray[j][0]);
                     } else if (chrArray[j].length == 2) {
                         chr.innerHTML = "<img src=./assets/chr/"+chrArray[j][0]+"/"+chrFacialArray[j][0]+".png id=chr1><img src=./assets/chr/"+chrArray[j][1]+"/"+chrFacialArray[j][1]+".png id=chr2>";
+                        chr_eff('#chr1', chrEffectArray[j][0]);
+                        chr_eff('#chr2', chrEffectArray[j][1]);
                     }
                 } if (lineArray[j]) {
                     line.style.display = "block"; 
