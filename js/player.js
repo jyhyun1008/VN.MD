@@ -46,9 +46,81 @@ if (ep) {
     fetch(url)
     .then(res => res.text())
     .then((out) => {
+        var i=0; 
+        var options; 
+        var titleArray = []; 
+        var subtitleArray = []; 
+        var bgArray = []; 
+        var bgmArray = [];
+        var soundArray = []; 
+        var effectArray = []; 
+        var nameArray = []; 
+        var lineArray = []; 
+        var chrArray = []; 
+        var chrFacialArray = []; 
+        var chrEffectArray = [];
+
         code = play(out);
         console.log(code);
         eval(code);
+        
+        j = 0;
+        function pageLoad(j, formerj) {
+            var bgm = []; var bg = document.querySelector("body"); var name = document.querySelector("#name"); var title = document.querySelector("#title"); var mainTitle = document.querySelector("#mainTitle"); var subTitle = document.querySelector("#subTitle"); var chr = document.querySelector("#chr"); var lineBox = document.querySelector("#lineBox");
+            if (bgArray[j]) {
+                bg.style.backgroundImage = "url(./assets/bg/"+bgArray[j]+".png)";
+            } else {
+                bg.style.backgroundImage = "none";
+            }
+            if (effectArray[j] && effectArray[j] != effectArray[formerj]) {
+                switch(effectArray[j]) {
+                    case 'gray':
+                        grayScale();
+                        break;
+                    case 'blur':
+                        blur();
+                        break;
+                    case 'sepia':
+                        sepia();
+                        break;
+                    case default:
+                        none();
+                        break;
+                }
+            } else {
+                none();
+            }
+            //bgm, sound
+            if (bgmArray[j] && bgmArray[j] != bgmArray[formerj]) {
+                bgmArray[formerj].pause(); bgmArray[j].play();
+            } else if (!bgmArray[j]) {
+                bgmArray[j] = new Audio(); bgmArray[formerj].pause();
+            } if (soundArray[j]) {
+                soundArray[j].loop = false; soundArray[j].play();
+            }
+            //TITLE
+            if (titleArray[j]){
+                title.style.display = "flex"; chr.style.display = "none"; lineBox.style.display = "none"; name.style.display = "none"; mainTitle.innerHTML = titleArray[j]; subTitle.innerHTML = subtitleArray[j];
+            } else {
+                title.style.display = "none"; lineBox.style.display = "block";  name.style.display = "block";
+                //PLACE
+                if (!lineArray[j] && !chrArray[j]) {
+                    name.innerHTML = nameArray[j]; chr.style.display = "none"; line.style.display = "none"; name.classList.remove("name"); name.classList.add("place");
+                //LINE
+                } if (chrArray[j]) {
+                    chr.style.display = "block";
+                    if (chrArray[j].length == 1) {
+                        chr.innerHTML = "<img src=./assets/chr/"+chrArray[j][0]+"/"+chrFacialArray[j][0]+".png id=chr0>";
+                    } else if (chrArray[j].length == 2) {
+                        chr.innerHTML = "<img src=./assets/chr/"+chrArray[j][0]+"/"+chrFacialArray[j][0]+".png id=chr1><img src=./assets/chr/"+chrArray[j][1]+"/"+chrFacialArray[j][1]+".png id=chr2>";
+                    }
+                } if (lineArray[j]) {
+                    line.style.display = "block"; name.classList.add("name"); name.classList.remove("place"); name.innerHTML = nameArray[j]; line1.innerHTML = ""; line2.innerHTML = ""; line3.innerHTML = ""; setTimeout(() => {typeLine(lineArray[j][0], lineArray[j][1], lineArray[j][2]);}, 0);
+                }
+            }
+        } 
+        pageLoad(j, 0);
+        
         raw.addEventListener("click", function(){ window.location.href = './md.html?ep='+ep;});
 
         document.documentElement.style.setProperty('--theme', `${options.theme}`);
@@ -267,6 +339,10 @@ function play(inputText){
     //bg
     inputText = inputText.replace(/\`bg\=([^\`]+)[\`]{1}/g, 'bgArray[i] = "$1";');
     inputText = inputText.replace(/\<\!\-\-bg\-\-\>/g, 'bgArray[i] = bgArray[i-1];');
+    
+    //effect
+    inputText = inputText.replace(/\`eff\=([^\`]+)[\`]{1}/g, 'effectArray[i] = "$1";');
+    inputText = inputText.replace(/\<\!\-\-eff\-\-\>/g, 'effectArray[i] = effectArray[i-1];');
 
     //name
     inputText = inputText.replace(/\n[\#]{3}(.+)/g, 'nameArray[i] = "$1";');
@@ -289,47 +365,6 @@ function play(inputText){
 
     //주석
     inputText = inputText.replace(/\n[\/]{2}(.+)/g, '');
-
-    inputText = 'var i=0; var options; var titleArray = []; var subtitleArray = []; var bgArray = []; var nameArray = []; var lineArray = []; var chrArray = []; var chrFacialArray = []; var chrEffectArray = [];var bgmArray = []; var soundArray = [];' + inputText + ''
-
-    inputText += 'j = 0;'+
-                'function pageLoad(j, formerj) {'+
-                    'var bgm = []; var bg = document.querySelector("body"); var name = document.querySelector("#name"); var title = document.querySelector("#title"); var mainTitle = document.querySelector("#mainTitle"); var subTitle = document.querySelector("#subTitle"); var chr = document.querySelector("#chr"); var lineBox = document.querySelector("#lineBox");'+
-                    'if (bgArray[j]) {'+
-                        'bg.style.backgroundImage = "url(./assets/bg/"+bgArray[j]+".png)";'+
-                    '} else {'+
-                        'bg.style.backgroundImage = "none";'+
-                    '}'+
-                    //bgm, sound
-                    'if (bgmArray[j] && bgmArray[j] != bgmArray[formerj]) {'+
-                        'bgmArray[formerj].pause(); bgmArray[j].play();'+
-                    '} else if (!bgmArray[j]) {'+
-                        'bgmArray[j] = new Audio(); bgmArray[formerj].pause();'+
-                    '} if (soundArray[j]) {'+
-                        'soundArray[j].loop = false; soundArray[j].play();'+
-                    '}'+
-                    //TITLE
-                    'if (titleArray[j]){'+
-                        'title.style.display = "flex"; chr.style.display = "none"; lineBox.style.display = "none"; name.style.display = "none"; mainTitle.innerHTML = titleArray[j]; subTitle.innerHTML = subtitleArray[j];'+
-                    '} else {' +
-                        'title.style.display = "none"; lineBox.style.display = "block";  name.style.display = "block";'+
-                        //PLACE
-                        'if (!lineArray[j] && !chrArray[j]) {'+
-                        'name.innerHTML = nameArray[j]; chr.style.display = "none"; line.style.display = "none"; name.classList.remove("name"); name.classList.add("place");'+
-                        //LINE
-                        '} if (chrArray[j]) {'+
-                            'chr.style.display = "block";'+
-                            'if (chrArray[j].length == 1) {'+
-                                'chr.innerHTML = "<img src=./assets/chr/"+chrArray[j][0]+"/"+chrFacialArray[j][0]+".png id=chr0>";'+
-                            '} else if (chrArray[j].length == 2) {'+
-                                'chr.innerHTML = "<img src=./assets/chr/"+chrArray[j][0]+"/"+chrFacialArray[j][0]+".png id=chr1><img src=./assets/chr/"+chrArray[j][1]+"/"+chrFacialArray[j][1]+".png id=chr2>";'+
-                            '}'+
-                        '} if (lineArray[j]) {'+
-                            'line.style.display = "block"; name.classList.add("name"); name.classList.remove("place"); name.innerHTML = nameArray[j]; line1.innerHTML = ""; line2.innerHTML = ""; line3.innerHTML = ""; setTimeout(() => {typeLine(lineArray[j][0], lineArray[j][1], lineArray[j][2]);}, 0);'+
-                        '}'+
-                    '}'+
-                '} '+
-                'pageLoad(j, 0);'
 
     return inputText;
 }
