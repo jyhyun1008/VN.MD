@@ -80,7 +80,7 @@ if (ep) {
                 bg.style.backgroundImage = "none";
             }
             if (effectArray[j] && effectArray[j] != effectArray[formerj]) {
-                effect();
+                effect(effectArray[j]);
             } else {
                 none();
             }
