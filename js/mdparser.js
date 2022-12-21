@@ -112,9 +112,10 @@ function getQueryStringObject() {
   
 var qs = getQueryStringObject();
 var page = qs.page;
+var raw = qs.raw;
 var ep = qs.ep;
 
-if (!page && !ep) {
+if (!page && !raw && !ep) {
     var url = "https://raw.githubusercontent.com/"+user+"/"+repo+"/main/README.md"
     fetch(url)
     .then(res => res.text())
@@ -130,7 +131,7 @@ if (!page && !ep) {
         document.querySelector("#post").innerHTML += parseMd(out)
     })
     .catch(err => { throw err });
-} else if (ep) {
+} else if (raw) {
     var url = "https://raw.githubusercontent.com/"+user+"/"+repo+"/main/ep/"+ep+".md";
     document.querySelector("#post").innerHTML += '<a href="./player.html?ep='+ep+'">플레이어 보기</a>'
     fetch(url)
