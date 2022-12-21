@@ -28,6 +28,25 @@ function none(){
   document.querySelector('#chr2').style.filter = "none";
 }
 
+//
+
+function effect(){
+  switch(effectArray[j]) {
+    case 'gray':
+      grayScale();
+      break;
+    case 'blur':
+      blur();
+      break;
+    case 'sepia':
+      sepia();
+      break;
+    case default:
+      none();
+      break;
+  }
+}
+
 //----- 캐릭터 이펙트(주로 애니메이션) -----
 
 function moveToCenter(chrId){
@@ -40,7 +59,39 @@ function moveToCenter(chrId){
     document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
     if (progress < 1000) {
       window.requestAnimationFrame(step);
+    } else {
+      document.querySelector(chrId).style.left = startP;
     }
+  }
+  window.requestAnimationFrame(step);
+}
+
+function moveToRight(chrId){
+  var startP = document.querySelector(chrId).style.left;
+  var endP = 100*vw;
+  
+  function step(timestamp) {
+    if (!start) start = timestamp;
+    var progress = timestamp - start;
+    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
+    if (progress < 1000) {
+      window.requestAnimationFrame(step);
+    } 
+  }
+  window.requestAnimationFrame(step);
+}
+
+function moveToleft(chrId){
+  var startP = document.querySelector(chrId).style.left;
+  var endP = -400;
+  
+  function step(timestamp) {
+    if (!start) start = timestamp;
+    var progress = timestamp - start;
+    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
+    if (progress < 1000) {
+      window.requestAnimationFrame(step);
+    } 
   }
   window.requestAnimationFrame(step);
 }
@@ -55,7 +106,7 @@ function passToRight(chrId){
     document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
     if (progress < 1000) {
       window.requestAnimationFrame(step);
-    }
+    } 
   }
   window.requestAnimationFrame(step);
 }
@@ -70,7 +121,7 @@ function passToLeft(chrId){
     document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
     if (progress < 1000) {
       window.requestAnimationFrame(step);
-    }
+    } 
   }
   window.requestAnimationFrame(step);
 }
@@ -91,4 +142,37 @@ function jump(chrId){
   }
   var g = 0;
   window.requestAnimationFrame(step);
+}
+  
+  //
+
+function chr_eff(chrId, effect){
+  var Origin = {
+    top: document.querySelector(chrId).style.top,
+    left: document.querySelector(chrId).style.left
+  }
+  switch (effect) {
+    case 'moveToCenter':
+      moveToCenter(chrId);
+      break;
+    case 'moveToLeft':
+      moveToLeft(chrId);
+      break;
+    case 'moveToRight':
+      moveToRight(chrId);
+      break;
+    case 'passToLeft':
+      moveToLeft(chrId);
+      break;
+    case 'passToRight':
+      moveToRight(chrId);
+      break;
+    case 'jump':
+      jump(chrId);
+      break;
+    case default;
+      document.querySelector(chrId).style.top = Origin.top;
+      document.querySelector(chrId).style.left = Origin.left;
+      break;
+  }
 }
