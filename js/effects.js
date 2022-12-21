@@ -58,7 +58,7 @@ function moveToCenter(chrId){
     var progress = timestamp - start;
     document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
     if (progress < 1000) {
-      console.log(progress);
+      window.requestAnimationFrame(step);
     } 
   }
   window.requestAnimationFrame(step);
