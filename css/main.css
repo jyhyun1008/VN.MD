@@ -183,16 +183,18 @@ blockquote:before {
 	font-size: 30px;
 	letter-spacing: 3px;
 	color: var(--white);
+	line-height: 30px;
 }
 
 .navbar .logo a span{
 	color: var(--accent);
         font-size: inherit;
+	line-height: inherit;
 }
 
 .main_container{
 	margin-top: 60px;
-    height: calc(100vh - 140px);
+    	height: calc(100vh - 140px);
 	padding: 25px;
 	overflow:auto; 
 }
@@ -201,7 +203,7 @@ blockquote:before {
 	display: flex;
 	max-width: 500px;
 	flex-wrap: wrap;
-    margin: 0 auto;
+   	margin: 0 auto;
 }
 
 .main_container .content .item_wrap{
@@ -246,7 +248,7 @@ blockquote:before {
 }
 
 .footer_navbar .menu ul li a{
-    font-size: 2rem;
+    	font-size: 2rem;
 	margin-right: 10px;
 	display: block;
 	text-align: center;
