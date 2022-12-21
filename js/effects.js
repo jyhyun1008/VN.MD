@@ -128,7 +128,7 @@ function passToLeft(chrId){
 
 function jump(chrId){
   var startP = document.querySelector(chrId).style.top;
-  var speed = 10px;
+  var speed = 10;
   
   function step(timestamp) {
     if (!start) start = timestamp;
