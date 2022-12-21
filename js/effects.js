@@ -137,7 +137,7 @@ function passToLeft(chrId){
     function step(timestamp) {
       if (!start) start = timestamp;
       var progress = timestamp - start;
-      document.querySelector(chrId).style.top = (document.querySelector(chrId).style.top + (speed - g) * progress/1000) + 'px';
+      document.querySelector(chrId).style.top = (document.querySelector(chrId).style.top + (speed - g)) + 'px';
       g++;
       console.log(document.querySelector(chrId).style.top, progress, g);
       if (document.querySelector(chrId).style.top > startP) {
