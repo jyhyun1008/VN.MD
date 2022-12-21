@@ -357,7 +357,7 @@ function play(inputText){
     inputText = inputText.replace(/\n\>(.+)/gm, 'lineArray[i] = [`$1`, ``, ``];');
 
     //character
-    inputText = inputText.replace(/\`(.+)\;\s(.+)\;\s(.+)\`\s\`(.+)\;\s(.+)\;\s(.+)\`/gm, 'chrArray[i] = [options.chr.$1, options.chr.$4]; chrFacialArray[i] = [options.facial.$2, options.facial.$5]; chrEffectArray = [options.facial.$3, options.facial.$6];');
+    inputText = inputText.replace(/\`(.+)\;\s(.+)\;\s(.+)\`\s\`(.+)\;\s(.+)\;\s(.+)\`/gm, 'chrArray[i] = [options.chr.$1, options.chr.$4]; chrFacialArray[i] = [options.facial.$2, options.facial.$5]; chrEffectArray[i] = [options.effect.$3, options.effect.$6];');
     inputText = inputText.replace(/\`(.+)\;\s(.+)\;\s(.+)\`/gm, 'chrArray[i] = [options.chr.$1]; chrFacialArray[i] = [options.facial.$2]; chrEffectArray = [options.facial.$3];');
     inputText = inputText.replace(/\<\!\-\-chr\-\-\>/g, 'chrArray[i] = chrArray[i-1]; chrFacialArray[i] = chrFacialArray[i-1]; chrEffectArray[i] = chrEffectArray[i-1];');
 
