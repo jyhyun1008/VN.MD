@@ -50,16 +50,16 @@ function effect(effectArray) {
 
 function moveToCenter(chrId){
   var start = null;
-  var startP = document.querySelector(chrId).style.left;
-  var endP = 50*vw - 200;
+  const startP = document.querySelector(chrId).style.left;
+  const endP = 50*vw - 200;
   
   function step(timestamp) {
     if (!start) start = timestamp;
     var progress = timestamp - start;
     document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
-    console.log(progress);
     if (progress < 1000) {
       window.requestAnimationFrame(step);
+      console.log(progress);
     }
   }
   window.requestAnimationFrame(step);
@@ -67,8 +67,8 @@ function moveToCenter(chrId){
 
 function moveToRight(chrId){
   var start = null;
-  var startP = document.querySelector(chrId).style.left;
-  var endP = 100*vw;
+  const startP = document.querySelector(chrId).style.left;
+  const endP = 100*vw;
   
   function step(timestamp) {
     if (!start) start = timestamp;
@@ -83,8 +83,8 @@ function moveToRight(chrId){
 
 function moveToleft(chrId){
   var start = null;
-  var startP = document.querySelector(chrId).style.left;
-  var endP = -400;
+  const startP = document.querySelector(chrId).style.left;
+  const endP = -400;
   
   function step(timestamp) {
     if (!start) start = timestamp;
@@ -99,8 +99,8 @@ function moveToleft(chrId){
 
 function passToRight(chrId){
   var start = null;
-  var startP = -400;
-  var endP = 100*vw;
+  const startP = -400;
+  const endP = 100*vw;
   
   function step(timestamp) {
     if (!start) start = timestamp;
@@ -115,8 +115,8 @@ function passToRight(chrId){
 
 function passToLeft(chrId){
   var start = null;
-  var startP = 100*vw;
-  var endP = -400;
+  const startP = 100*vw;
+  const endP = -400;
   
   function step(timestamp) {
     if (!start) start = timestamp;
@@ -131,8 +131,10 @@ function passToLeft(chrId){
 
   function jump(chrId){
     var start = null;
-    var startP = document.querySelector(chrId).style.top;
+    const startP = document.querySelector(chrId).style.top;
     var speed = 10;
+    
+    var g = 0;
     
     function step(timestamp) {
       if (!start) start = timestamp;
@@ -146,7 +148,6 @@ function passToLeft(chrId){
         document.querySelector(chrId).style.top = startP;
       }
     }
-    var g = 0;
     window.requestAnimationFrame(step);
   }
   
