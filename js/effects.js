@@ -125,23 +125,24 @@ function passToLeft(chrId){
   window.requestAnimationFrame(step);
 }
 
-function jump(chrId){
-  var startP = document.querySelector(chrId).style.top;
-  var speed = 10;
-  
-  function step(timestamp) {
-    if (!start) start = timestamp;
-    var progress = timestamp - start;
-    document.querySelector(chrId).style.top = (document.querySelector(chrId).style.top + (speed - g) * progress/1000) + 'px';
-    g++;
-    if (document.querySelector(chrId).style.top < 1) {
-      window.requestAnimationFrame(step);
-    } else {
-      document.querySelector(chrId).style.top = startP;
+  function jump(chrId){
+    var startP = document.querySelector(chrId).style.top;
+    var speed = 10;
+    
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      var progress = timestamp - start;
+      document.querySelector(chrId).style.top = (document.querySelector(chrId).style.top + (speed - g) * progress/1000) + 'px';
+      g++;
+      if (document.querySelector(chrId).style.top < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        document.querySelector(chrId).style.top = startP;
+      }
+    }
+    var g = 0;
+    window.requestAnimationFrame(step);
   }
-  var g = 0;
-  window.requestAnimationFrame(step);
-}
   
   //
 
