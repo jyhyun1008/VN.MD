@@ -57,6 +57,7 @@ function moveToCenter(chrId){
     if (!start) start = timestamp;
     var progress = timestamp - start;
     document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
+    console.log(progress);
     if (progress < 1000) {
       window.requestAnimationFrame(step);
     }
@@ -138,6 +139,7 @@ function passToLeft(chrId){
       var progress = timestamp - start;
       document.querySelector(chrId).style.top = (document.querySelector(chrId).style.top + (speed - g) * progress/1000) + 'px';
       g++;
+      console.log(document.querySelector(chrId).style.top, progress, g);
       if (document.querySelector(chrId).style.top > startP) {
         window.requestAnimationFrame(step);
       } else {
