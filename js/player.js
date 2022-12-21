@@ -18,7 +18,7 @@ var ep = qs.ep;
 
 if (ep) {
     
-    document.getElementsByTagName('head')[0] += '<link rel="stylesheet" media="screen" href="./css/player.css">';
+    document.getElementsByTagName('head')[0].innerHTML += '<link rel="stylesheet" media="screen" href="./css/player.css">';
 
     var content = document.querySelector('.content');
     content.innerHTML = `<div id="player"><div id="title"><div id="mainTitle"></div><div id="subTitle"></div></div><div id="chr"></div><div id="lineBox"><div id="name" class="name">이름</div><div id="line"><div class="line" id="line1"></div><div class="line" id="line2"></div><div class="line" id="line3"></div></div></div><div id="controller"><div id="prev"><i class="bx bxs-chevron-left" ></i></div><div id="next"><i class='bx bxs-chevron-right' ></i></div><div id="mute"><i class='bx bxs-volume-mute' ></i></div><div id="raw"><i class="bx bx-clipboard" ></i></div></div></div>`;
