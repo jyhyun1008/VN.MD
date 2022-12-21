@@ -30,7 +30,7 @@ function none(){
 
 //
 
-function effect(){
+function effect(effectArray[j]) {
   switch(effectArray[j]) {
     case 'gray':
       grayScale();
@@ -149,8 +149,8 @@ function chr_eff(chrId, effect){
   var Origin = {
     top: document.querySelector(chrId).style.top,
     left: document.querySelector(chrId).style.left
-  }
-  switch (effect) {
+  };
+  switch(effect) {
     case 'moveToCenter':
       moveToCenter(chrId);
       break;
