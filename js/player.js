@@ -66,7 +66,14 @@ if (ep) {
         
         j = 0;
         function pageLoad(j, formerj) {
-            var bgm = []; var bg = document.querySelector("body"); var name = document.querySelector("#name"); var title = document.querySelector("#title"); var mainTitle = document.querySelector("#mainTitle"); var subTitle = document.querySelector("#subTitle"); var chr = document.querySelector("#chr"); var lineBox = document.querySelector("#lineBox");
+            var bgm = []; 
+            var bg = document.querySelector("body"); 
+            var name = document.querySelector("#name"); 
+            var title = document.querySelector("#title"); 
+            var mainTitle = document.querySelector("#mainTitle"); 
+            var subTitle = document.querySelector("#subTitle"); 
+            var chr = document.querySelector("#chr"); 
+            var lineBox = document.querySelector("#lineBox");
             if (bgArray[j]) {
                 bg.style.backgroundImage = "url(./assets/bg/"+bgArray[j]+".png)";
             } else {
@@ -100,12 +107,14 @@ if (ep) {
             }
             //TITLE
             if (titleArray[j]){
-                title.style.display = "flex"; chr.style.display = "none"; lineBox.style.display = "none"; name.style.display = "none"; mainTitle.innerHTML = titleArray[j]; subTitle.innerHTML = subtitleArray[j];
+                title.style.display = "flex"; chr.style.display = "none"; lineBox.style.display = "none"; name.style.display = "none"; 
+                mainTitle.innerHTML = titleArray[j]; subTitle.innerHTML = subtitleArray[j];
             } else {
                 title.style.display = "none"; lineBox.style.display = "block";  name.style.display = "block";
                 //PLACE
                 if (!lineArray[j] && !chrArray[j]) {
-                    name.innerHTML = nameArray[j]; chr.style.display = "none"; line.style.display = "none"; name.classList.remove("name"); name.classList.add("place");
+                    name.innerHTML = nameArray[j]; 
+                    chr.style.display = "none"; line.style.display = "none"; name.classList.remove("name"); name.classList.add("place");
                 //LINE
                 } if (chrArray[j]) {
                     chr.style.display = "block";
@@ -115,7 +124,12 @@ if (ep) {
                         chr.innerHTML = "<img src=./assets/chr/"+chrArray[j][0]+"/"+chrFacialArray[j][0]+".png id=chr1><img src=./assets/chr/"+chrArray[j][1]+"/"+chrFacialArray[j][1]+".png id=chr2>";
                     }
                 } if (lineArray[j]) {
-                    line.style.display = "block"; name.classList.add("name"); name.classList.remove("place"); name.innerHTML = nameArray[j]; line1.innerHTML = ""; line2.innerHTML = ""; line3.innerHTML = ""; setTimeout(() => {typeLine(lineArray[j][0], lineArray[j][1], lineArray[j][2]);}, 0);
+                    line.style.display = "block"; 
+                    name.classList.add("name"); 
+                    name.classList.remove("place"); 
+                    name.innerHTML = nameArray[j]; 
+                    line1.innerHTML = ""; line2.innerHTML = ""; line3.innerHTML = ""; 
+                    setTimeout(() => {typeLine(lineArray[j][0], lineArray[j][1], lineArray[j][2]);}, 0);
                 }
             }
         } 
