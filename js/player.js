@@ -350,18 +350,18 @@ function play(inputText){
     inputText = inputText.replace(/^\`\`\`\s*\n/gm, ';');
 
     //bgm
-    inputText = inputText.replace(/\`bgm\=([^\`]+)[\`]{1}/g, 'bgm = options.bgm.$1; \nbgmArray[i] = new Audio("./assets/bgm/"+bgm+".mp3");');
+    inputText = inputText.replace(/\`bgm\=([^\`]+)[\`]{1}/g, 'var bgm = options.bgm.$1; \nbgmArray[i] = new Audio("./assets/bgm/"+bgm+".mp3");');
     inputText = inputText.replace(/\<\!\-\-bgm\-\-\>/g, 'bgmArray[i] = bgmArray[i-1];');
 
     //sound
-    inputText = inputText.replace(/\`sound\=([^\`]+)[\`]{1}/g, 'sound = options.sound.$1; \nsoundArray[i] = new Audio("./assets/sound/"+sound+".mp3");');
+    inputText = inputText.replace(/\`sound\=([^\`]+)[\`]{1}/g, 'var sound = options.sound.$1; \nsoundArray[i] = new Audio("./assets/sound/"+sound+".mp3");');
 
     //bg
-    inputText = inputText.replace(/\`bg\=([^\`]+)[\`]{1}/g, 'bgi = options.bg.$1; \nbgArray[i] = bgi;');
+    inputText = inputText.replace(/\`bg\=([^\`]+)[\`]{1}/g, 'var bgi = options.bg.$1; \nbgArray[i] = bgi;');
     inputText = inputText.replace(/\<\!\-\-bg\-\-\>/g, 'bgArray[i] = bgArray[i-1];');
     
     //effect
-    inputText = inputText.replace(/\`eff\=([^\`]+)[\`]{1}/g, 'effect = options.effect.$1; \neffectArray[i] = effect;');
+    inputText = inputText.replace(/\`eff\=([^\`]+)[\`]{1}/g, 'var effect = options.effect.$1; \neffectArray[i] = effect;');
     inputText = inputText.replace(/\<\!\-\-eff\-\-\>/g, 'effectArray[i] = effectArray[i-1];');
 
     //name
