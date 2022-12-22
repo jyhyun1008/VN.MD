@@ -17,14 +17,15 @@
 }
 
 #player {
-    position: absolute;
-    z-index: 0;
-    top: 60px;
-    left: calc(50vw - 250px);
-    width: 100%;
-    max-width: 500px;
-    height: calc(100vh - 140px);
-    overflow: hidden;
+   	position: absolute;
+    	z-index: 0;
+    	top: 60px;
+    	left: calc(50vw - 250px);
+    	width: 100%;
+    	max-width: 500px;
+    	height: calc(100vh - 140px);
+    	overflow: hidden;
+	filter: none;
 }
 
 #title {
