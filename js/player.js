@@ -352,8 +352,8 @@ function play(inputText){
     inputText = inputText.replace(/\n[\#]{3}(.+)/g, 'nameArray[i] = "$1";');
 
     //line1
-    inputText = inputText.replace(/\n\>(.+)\n\>(.+)\n\>(.+)/gm, 'lineArray[i] = [`$1`, `$2`, `$3`];');
-    inputText = inputText.replace(/\n\>(.+)\n\>(.+)/gm, 'lineArray[i] = [`$1`, `$2`, ``];');
+    inputText = inputText.replace(/\n\>(.+)[\n]{1,2}\>(.+)[\n]{1,2}\>(.+)/gm, 'lineArray[i] = [`$1`, `$2`, `$3`];');
+    inputText = inputText.replace(/\n\>(.+)[\n]{1,2}\>(.+)/gm, 'lineArray[i] = [`$1`, `$2`, ``];');
     inputText = inputText.replace(/\n\>(.+)/gm, 'lineArray[i] = [`$1`, ``, ``];');
 
     //character
