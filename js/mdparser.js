@@ -8,6 +8,11 @@ function parseMd(md){
     md = md.replace(/^(\*\s.+)\s*\n([^\*])/gm, '$1\n</ul>\n\n$2');
     md = md.replace(/^\*\s(.+)/gm, '<li>$1</li>');
     
+    //ul
+    md = md.replace(/^\s*\n\-\s/gm, '<ul>\n* ');
+    md = md.replace(/^(\-\s.+)\s*\n([^\-])/gm, '$1\n</ul>\n\n$2');
+    md = md.replace(/^\-\s(.+)/gm, '<li>$1</li>');
+    
     //ol
     md = md.replace(/^\s*\n\d\.\s/gm, '<ol>\n1. ');
     md = md.replace(/^(\d\.\s.+)\s*\n([^\d\.])/gm, '$1\n</ol>\n\n$2');
