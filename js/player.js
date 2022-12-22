@@ -365,12 +365,12 @@ function play(inputText){
     inputText = inputText.replace(/\<\!\-\-eff\-\-\>/g, 'effectArray[i] = effectArray[i-1];');
 
     //name
-    inputText = inputText.replace(/\n[\#]{3}(.+)/g, 'nameArray[i] = "$1";');
+    inputText = inputText.replace(/\n[\#]{3}(.+)/g, '\nnameArray[i] = "$1";');
 
     //line1
-    inputText = inputText.replace(/\n\>(.+)[\n]{1,2}\>(.+)[\n]{1,2}\>(.+)/gm, 'lineArray[i] = [`$1`, `$2`, `$3`];');
-    inputText = inputText.replace(/\n\>(.+)[\n]{1,2}\>(.+)/gm, 'lineArray[i] = [`$1`, `$2`, ``];');
-    inputText = inputText.replace(/\n\>(.+)/gm, 'lineArray[i] = [`$1`, ``, ``];');
+    inputText = inputText.replace(/\n\>(.+)[\n]{1,2}\>(.+)[\n]{1,2}\>(.+)/gm, '\nlineArray[i] = [`$1`, `$2`, `$3`];');
+    inputText = inputText.replace(/\n\>(.+)[\n]{1,2}\>(.+)/gm, '\nlineArray[i] = [`$1`, `$2`, ``];');
+    inputText = inputText.replace(/\n\>(.+)/gm, '\nlineArray[i] = [`$1`, ``, ``];');
 
     //character
     inputText = inputText.replace(/\`(.+)\;\s(.+)\;\s(.+)\`\s\`(.+)\;\s(.+)\;\s(.+)\`/gm, 'chrArray[i] = [options.chr.$1, options.chr.$4]; chrFacialArray[i] = [options.facial.$2, options.facial.$5]; chrEffectArray[i] = [options.effect.$3, options.effect.$6];');
@@ -378,10 +378,10 @@ function play(inputText){
     inputText = inputText.replace(/\<\!\-\-chr\-\-\>/g, 'chrArray[i] = chrArray[i-1]; chrFacialArray[i] = chrFacialArray[i-1]; chrEffectArray[i] = chrEffectArray[i-1];');
 
     //subtitle
-    inputText = inputText.replace(/\n[\#]{2}(.+)/g, 'subtitleArray[i] = "$1";');
+    inputText = inputText.replace(/\n[\#]{2}(.+)/g, '\nsubtitleArray[i] = "$1";');
 
     //title
-    inputText = inputText.replace(/\n[\#]{1}(.+)/g, 'titleArray[i] = "$1";');
+    inputText = inputText.replace(/\n[\#]{1}(.+)/g, '\ntitleArray[i] = "$1";');
 
     //주석
     inputText = inputText.replace(/\n[\/]{2}(.+)/g, '');
