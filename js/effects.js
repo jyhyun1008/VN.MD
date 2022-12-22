@@ -140,7 +140,7 @@ function passToLeft(chrId){
       var progress = timestamp - start;
       document.querySelector(chrId).style.top = (document.querySelector(chrId).offsetTop - (speed - g)) + 'px';
       g++;
-      if (document.querySelector(chrId).offsetTop > startP) {
+      if (document.querySelector(chrId).offsetTop < startP) {
         console.log(document.querySelector(chrId).offsetTop, progress, g);
         window.requestAnimationFrame(step);
       } else {
