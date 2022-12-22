@@ -124,10 +124,14 @@ if (ep) {
                     name.classList.add("name"); 
                     name.classList.remove("place"); 
                     name.innerHTML = nameArray[j]; 
-                    line1.innerHTML = ""; line2.innerHTML = ""; line3.innerHTML = ""; 
+                    line1.innerHTML = ""; 
+                    line2.innerHTML = ""; 
+                    line3.innerHTML = ""; 
                     setTimeout(() => {typeLine(lineArray[j][0], lineArray[j][1], lineArray[j][2]);}, 17);
                 } else {
-                    line1.innerHTML = ""; line2.innerHTML = ""; line3.innerHTML = ""; 
+                    line1.innerHTML = ""; 
+                    line2.innerHTML = ""; 
+                    line3.innerHTML = ""; 
                 }
             }
         } 
