@@ -67,7 +67,7 @@ if (ep) {
         j = 0;
         function pageLoad(j, formerj) {
             var bgm = []; 
-            var bg = document.querySelector("body"); 
+            var bg = document.querySelector(".wrapper"); 
             var name = document.querySelector("#name"); 
             var title = document.querySelector("#title"); 
             var mainTitle = document.querySelector("#mainTitle"); 
