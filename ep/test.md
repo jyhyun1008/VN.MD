@@ -7,22 +7,33 @@
 {
   balloon: "default",
   theme: "#7174F6",
-  chr: {
-    재여: "Zaiyu",
-    염구: "Ranqiu"
+  bg: {
+    강당: "lecture_room",
+    기숙사: "dorm"
   },
-  facial: {
+  bgm: {
+    기본: "default"
+  },
+  sound: {
+    문소리: "push"
+  },
+  effect: {
+    흑백: "gray",
+    세피아: "sepia",
+    블러: "blur"
+  },
+  chr: {
+    염구: "Ranqiu",
+    재여: "Zaiyu"
+  },
+  chr_facial: {
     무표정: "none",
     웃음: "smile",
     크게웃음: "laugh"
   },
-  effect: {
+  chr_effect: {
     효과없음: "none",
     중앙이동: "moveToCenter",
-    좌향이동: "moveToLeft",
-    우향이동: "moveToRight",
-    좌향패스: "passToLeft",
-    우향패스: "passToRight",
     점프: "jump"
   }
 }
@@ -30,7 +41,7 @@
 
 ---
 
-`bgm=default` `bg=dorm`
+`bgm=기본` `bg=기숙사`
 
 ### 어느 날
 
@@ -63,7 +74,7 @@
 
 <!--bgm-->
 
-`bg=lecture_room`
+`bg=강당`
 
 ### 강당
 
@@ -91,7 +102,7 @@
 
 <!--bgm--> <!--bg--> <!--chr-->
 
-`eff=gray`
+`eff=흑백`
 
 ### 재여
 > 회색 필터를 씌울 수도 있고,
@@ -100,7 +111,7 @@
 
 <!--bgm--> <!--bg--> <!--chr-->
 
-`eff=sepia`
+`eff=세피아`
 
 ### 재여
 > 세피아로 할 수도 있고,
