@@ -55,29 +55,29 @@
 }
 
 #chr{
-    position: absolute;
-    z-index: 2;
+    	position: absolute;
+    	z-index: 2;
 }
 
 #chr1{
-    position: absolute;
-    width: 400px;
-    top: calc(100vh - 800px);
-    left: calc(135px - 200px);
+   	position: absolute;
+    	width: 400px;
+    	top: calc(100vh - 800px);
+    	left: calc(50vw - 115px - 200px);
 }
 
 #chr0{
-    position: absolute;
-    width: 400px;
-    top: calc(100vh - 800px);
-    left: calc(250px - 200px);
+   	position: absolute;
+    	width: 400px;
+    	top: calc(100vh - 800px);
+       	left: calc(50vw - 200px);
 }
 
 #chr2{
-    position: absolute;
-    width: 400px;
-    top: calc(100vh - 800px);
-    left: calc(365px - 200px);
+    	position: absolute;
+    	width: 400px;
+    	top: calc(100vh - 800px);
+    	left: calc(50vw + 115px - 200px);
 }
 
 #lineBox{
