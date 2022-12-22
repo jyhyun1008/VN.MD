@@ -19,10 +19,11 @@ logoText.innerHTML = "<a href='./'>" + logo + "</a>"
 // ----- 모바일 뷰포트 계산 -----
 
 let vh = window.innerHeight * 0.01;
+var vw;
 if (window.innerWidth > 500){
-    let vw = 5;
+    vw = 5;
 } else {
-    let vw = window.innerWidth * 0.01;
+    vw = window.innerWidth * 0.01;
 }
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
@@ -30,9 +31,9 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 window.addEventListener('resize', () => {
     let vh = window.innerHeight * 0.01;
     if (window.innerWidth > 500){
-        let vw = 5;
+        vw = 5;
     } else {
-        let vw = window.innerWidth * 0.01;
+        vw = window.innerWidth * 0.01;
     }
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 })
