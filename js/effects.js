@@ -50,13 +50,13 @@ function effect(effectArray) {
 
 function moveToCenter(chrId){
   var start = null;
-  const startP = document.querySelector(chrId).style.left;
+  const startP = document.querySelector(chrId).offsetLeft;
   const endP = 50*vw - 200;
   
   function step(timestamp) {
     if (!start) start = timestamp;
     var progress = timestamp - start;
-    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
+    document.querySelector(chrId).offsetLeft = (startP + (endP - startP) * progress/1000) + 'px';
     if (progress < 1000) {
       window.requestAnimationFrame(step);
     } 
@@ -130,7 +130,7 @@ function passToLeft(chrId){
 
   function jump(chrId){
     var start = null;
-    const startP = document.querySelector(chrId).style.top;
+    const startP = document.querySelector(chrId).offsetTop;
     var speed = 10;
     
     var g = 0;
@@ -138,13 +138,13 @@ function passToLeft(chrId){
     function step(timestamp) {
       if (!start) start = timestamp;
       var progress = timestamp - start;
-      document.querySelector(chrId).style.top = (document.querySelector(chrId).style.top + (speed - g)) + 'px';
+      document.querySelector(chrId).offsetTop = (document.querySelector(chrId).offsetTop + (speed - g)) + 'px';
       g++;
-      if (document.querySelector(chrId).style.top > startP) {
-        console.log(document.querySelector(chrId).style.top, progress, g);
+      if (document.querySelector(chrId).offsetTop > startP) {
+        console.log(document.querySelector(chrId).offsetTop, progress, g);
         window.requestAnimationFrame(step);
       } else {
-        document.querySelector(chrId).style.top = startP;
+        document.querySelector(chrId).offsetTop = startP;
       }
     }
     window.requestAnimationFrame(step);
