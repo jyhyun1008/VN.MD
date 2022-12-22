@@ -116,7 +116,10 @@ if (ep) {
                         chr_eff('#chr1', chrEffectArray[j][0]);
                         chr_eff('#chr2', chrEffectArray[j][1]);
                     }
-                } if (lineArray[j]) {
+                } else {
+                    chr.style.display = "none";
+                }
+                if (lineArray[j]) {
                     line.style.display = "block"; 
                     name.classList.add("name"); 
                     name.classList.remove("place"); 
