@@ -361,7 +361,7 @@ function play(inputText){
     inputText = inputText.replace(/\<\!\-\-bg\-\-\>/g, 'bgArray[i] = bgArray[i-1];');
     
     //effect
-    inputText = inputText.replace(/\`eff\=([^\`]+)[\`]{1}/g, 'var effect = options.effect.$1; \neffectArray[i] = effect;');
+    inputText = inputText.replace(/\`eff\=([^\`]+)[\`]{1}/g, 'var eff = options.effect.$1; \neffectArray[i] = eff;');
     inputText = inputText.replace(/\<\!\-\-eff\-\-\>/g, 'effectArray[i] = effectArray[i-1];');
 
     //name
