@@ -137,7 +137,7 @@ if (ep) {
         } 
         pageLoad(j, 0);
         
-        raw.addEventListener("click", function(){ window.location.href = './md.html?ep='+ep;});
+        raw.addEventListener("click", function(){ window.location.href = './index.html?raw='+ep;});
 
         document.documentElement.style.setProperty('--theme', `${options.theme}`);
 
