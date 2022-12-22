@@ -7,16 +7,31 @@
 {
   balloon: "default",
   theme: "#7174F6",
+  bg: {
+    강당: "lecture_room",
+    기숙사: "dorm"
+  },
+  bgm: {
+    기본: "default"
+  },
+  sound: {
+    문소리: "push"
+  },
+  effect: {
+    흑백: "gray",
+    세피아: "sepia",
+    블러: "blur"
+  },
   chr: {
     선생님: "Laoshi",
     재여: "Zaiyu"
   },
-  facial: {
+  chr_facial: {
     무표정: "none",
     웃음: "smile",
     크게웃음: "laugh"
   },
-  effect: {
+  chr_effect: {
     효과없음: "none",
     중앙이동: "moveToCenter",
     점프: "jump"
