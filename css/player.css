@@ -6,7 +6,7 @@
     --navbar: #090f1b;
 }
 
-#background {
+.wrapper {
 	width: 100vw;
 	height: 100vh;
 	position: absolute;
