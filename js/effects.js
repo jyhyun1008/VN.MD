@@ -56,7 +56,7 @@ function moveToCenter(chrId){
   function step(timestamp) {
     if (!start) start = timestamp;
     var progress = timestamp - start;
-    document.querySelector(chrId).offsetLeft = (startP + (endP - startP) * progress/1000) + 'px';
+    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
     if (progress < 1000) {
       window.requestAnimationFrame(step);
     } 
@@ -138,13 +138,13 @@ function passToLeft(chrId){
     function step(timestamp) {
       if (!start) start = timestamp;
       var progress = timestamp - start;
-      document.querySelector(chrId).offsetTop = (document.querySelector(chrId).offsetTop + (speed - g)) + 'px';
+      document.querySelector(chrId).style.top = (document.querySelector(chrId).offsetTop + (speed - g)) + 'px';
       g++;
       if (document.querySelector(chrId).offsetTop > startP) {
         console.log(document.querySelector(chrId).offsetTop, progress, g);
         window.requestAnimationFrame(step);
       } else {
-        document.querySelector(chrId).offsetTop = startP;
+        document.querySelector(chrId).style.top = startP;
       }
     }
     window.requestAnimationFrame(step);
