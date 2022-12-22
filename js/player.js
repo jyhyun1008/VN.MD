@@ -130,7 +130,7 @@ if (ep) {
                     setTimeout(() => {typeLine(lineArray[j][0], lineArray[j][1], lineArray[j][2]);}, 17);
                 } else {
                     line.style.display = "none";
-                    name.style.display = "none;
+                    name.style.display = "none";
                     line1.innerHTML = ""; 
                     line2.innerHTML = ""; 
                     line3.innerHTML = ""; 
