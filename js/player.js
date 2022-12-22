@@ -350,18 +350,18 @@ function play(inputText){
     inputText = inputText.replace(/^\`\`\`\s*\n/gm, ';');
 
     //bgm
-    inputText = inputText.replace(/\`bgm\=([^\`]+)[\`]{1}/g, 'bgmArray[i] = new Audio("./assets/bgm/$1.mp3");');
+    inputText = inputText.replace(/\`bgm\=([^\`]+)[\`]{1}/g, 'bgm = options.bgm.$1 ; \nbgmArray[i] = new Audio("./assets/bgm/"+bgm+".mp3");');
     inputText = inputText.replace(/\<\!\-\-bgm\-\-\>/g, 'bgmArray[i] = bgmArray[i-1];');
 
     //sound
-    inputText = inputText.replace(/\`sound\=([^\`]+)[\`]{1}/g, 'soundArray[i] = new Audio("./assets/sound/$1.mp3");');
+    inputText = inputText.replace(/\`sound\=([^\`]+)[\`]{1}/g, 'sound = options.sound.$1 ; \nsoundArray[i] = new Audio("./assets/sound/"+sound+".mp3");');
 
     //bg
-    inputText = inputText.replace(/\`bg\=([^\`]+)[\`]{1}/g, 'bgArray[i] = "$1";');
+    inputText = inputText.replace(/\`bg\=([^\`]+)[\`]{1}/g, 'bg = options.bg.$1 ; \nbgArray[i] = bg;');
     inputText = inputText.replace(/\<\!\-\-bg\-\-\>/g, 'bgArray[i] = bgArray[i-1];');
     
     //effect
-    inputText = inputText.replace(/\`eff\=([^\`]+)[\`]{1}/g, 'effectArray[i] = "$1";');
+    inputText = inputText.replace(/\`eff\=([^\`]+)[\`]{1}/g, 'effect = options.effect.$1 ; \neffectArray[i] = effect;');
     inputText = inputText.replace(/\<\!\-\-eff\-\-\>/g, 'effectArray[i] = effectArray[i-1];');
 
     //name
@@ -373,8 +373,8 @@ function play(inputText){
     inputText = inputText.replace(/\n\>(.+)/gm, '\nlineArray[i] = [`$1`, ``, ``];');
 
     //character
-    inputText = inputText.replace(/\`(.+)\;\s(.+)\;\s(.+)\`\s\`(.+)\;\s(.+)\;\s(.+)\`/gm, 'chrArray[i] = [options.chr.$1, options.chr.$4]; chrFacialArray[i] = [options.facial.$2, options.facial.$5]; chrEffectArray[i] = [options.effect.$3, options.effect.$6];');
-    inputText = inputText.replace(/\`(.+)\;\s(.+)\;\s(.+)\`/gm, 'chrArray[i] = [options.chr.$1]; chrFacialArray[i] = [options.facial.$2]; chrEffectArray[i] = [options.effect.$3];');
+    inputText = inputText.replace(/\`(.+)\;\s(.+)\;\s(.+)\`\s\`(.+)\;\s(.+)\;\s(.+)\`/gm, 'chrArray[i] = [options.chr.$1, options.chr.$4]; chrFacialArray[i] = [options.chr_facial.$2, options.chr_facial.$5]; chrEffectArray[i] = [options.chr_effect.$3, options.chr_effect.$6];');
+    inputText = inputText.replace(/\`(.+)\;\s(.+)\;\s(.+)\`/gm, 'chrArray[i] = [options.chr.$1]; chrFacialArray[i] = [options.chr_facial.$2]; chrEffectArray[i] = [options.chr_effect.$3];');
     inputText = inputText.replace(/\<\!\-\-chr\-\-\>/g, 'chrArray[i] = chrArray[i-1]; chrFacialArray[i] = chrFacialArray[i-1]; chrEffectArray[i] = chrEffectArray[i-1];');
 
     //subtitle
