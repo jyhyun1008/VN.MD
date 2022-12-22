@@ -5,4 +5,4 @@
 
 ### 제목
 
-- 01.1 [부제목](./index.html?episode=side01)
+* 01.1 [부제목](./index.html?episode=side01)
