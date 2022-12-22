@@ -74,6 +74,9 @@ if (ep) {
             var subTitle = document.querySelector("#subTitle"); 
             var chr = document.querySelector("#chr"); 
             var lineBox = document.querySelector("#lineBox");
+            var line1 = document.querySelector('#line1');
+            var line2 = document.querySelector('#line2');
+            var line3 = document.querySelector('#line3');
             if (bgArray[j]) {
                 bg.style.backgroundImage = "url(./assets/bg/"+bgArray[j]+".png)";
             } else {
