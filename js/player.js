@@ -22,6 +22,8 @@ if (ep) {
 
     var content = document.querySelector('.content');
     content.innerHTML = `<div id="player"><div id="title"><div id="mainTitle"></div><div id="subTitle"></div></div><div id="chr"></div><div id="lineBox"><div id="name" class="name">이름</div><div id="line"><div class="line" id="line1"></div><div class="line" id="line2"></div><div class="line" id="line3"></div></div></div><div id="controller"><div id="prev"><i class="bx bxs-chevron-left" ></i></div><div id="next"><i class='bx bxs-chevron-right' ></i></div><div id="mute"><i class='bx bxs-volume-mute' ></i></div><div id="raw"><i class="bx bx-clipboard" ></i></div></div></div>`;
+    
+    if (document.querySelector('#player')) {let vw = document.querySelector('#player').clientWidth * 0.01;}
 
     var bg = document.querySelector('body');
     var title = document.querySelector('#title');
