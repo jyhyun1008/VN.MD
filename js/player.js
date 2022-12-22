@@ -235,6 +235,8 @@ if (ep) {
                 // 타이핑이 진행되지 않았다면 
                 typingBool1=false;     
                 line1.innerHTML = '';
+                line2.innerHTML = '';
+                line3.innerHTML = '';
                 var tyInt1 = setInterval(typing1,50); // 반복동작 
             } 
                 
