@@ -18,8 +18,8 @@ function none(){
 
 //
 
-function effect(effectArray) {
-  switch(effectArray) {
+function effect(array) {
+  switch(array) {
     case 'gray':
       grayScale();
       break;
