@@ -56,8 +56,8 @@ function moveToCenter(chrId){
   function step(timestamp) {
     if (!start) start = timestamp;
     var progress = timestamp - start;
-    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
-    if (progress < 1000) {
+    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/500) + 'px';
+    if (progress < 500) {
       window.requestAnimationFrame(step);
     } 
   }
@@ -66,14 +66,14 @@ function moveToCenter(chrId){
 
 function moveToRight(chrId){
   var start = null;
-  const startP = document.querySelector(chrId).style.left;
+  const startP = document.querySelector(chrId).offsetLeft;
   const endP = 100*vw;
   
   function step(timestamp) {
     if (!start) start = timestamp;
     var progress = timestamp - start;
-    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
-    if (progress < 1000) {
+    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/500) + 'px';
+    if (progress < 500) {
       window.requestAnimationFrame(step);
     } 
   }
@@ -82,14 +82,14 @@ function moveToRight(chrId){
 
 function moveToleft(chrId){
   var start = null;
-  const startP = document.querySelector(chrId).style.left;
+  const startP = document.querySelector(chrId).offsetLeft;
   const endP = -400;
   
   function step(timestamp) {
     if (!start) start = timestamp;
     var progress = timestamp - start;
-    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
-    if (progress < 1000) {
+    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/500) + 'px';
+    if (progress < 500) {
       window.requestAnimationFrame(step);
     } 
   }
@@ -104,8 +104,8 @@ function passToRight(chrId){
   function step(timestamp) {
     if (!start) start = timestamp;
     var progress = timestamp - start;
-    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
-    if (progress < 1000) {
+    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/500) + 'px';
+    if (progress < 500) {
       window.requestAnimationFrame(step);
     } 
   }
@@ -120,8 +120,8 @@ function passToLeft(chrId){
   function step(timestamp) {
     if (!start) start = timestamp;
     var progress = timestamp - start;
-    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
-    if (progress < 1000) {
+    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/500) + 'px';
+    if (progress < 500) {
       window.requestAnimationFrame(step);
     } 
   }
@@ -129,19 +129,15 @@ function passToLeft(chrId){
 }
 
   function jump(chrId){
-    var start = null;
     const startP = document.querySelector(chrId).offsetTop;
     var speed = 10;
     
     var g = 0;
     
     function step(timestamp) {
-      if (!start) start = timestamp;
-      var progress = timestamp - start;
       document.querySelector(chrId).style.top = (document.querySelector(chrId).offsetTop - (speed - g)) + 'px';
       g++;
       if (document.querySelector(chrId).offsetTop < startP) {
-        console.log(document.querySelector(chrId).offsetTop, progress, g);
         window.requestAnimationFrame(step);
       } else {
         document.querySelector(chrId).style.top = startP;
@@ -154,8 +150,8 @@ function passToLeft(chrId){
 
 function chr_eff(chrId, effect){
   var Origin = {
-    top: document.querySelector(chrId).style.top,
-    left: document.querySelector(chrId).style.left
+    top: document.querySelector(chrId).offsetTop,
+    left: document.querySelector(chrId).offsetLeft
   };
   switch(effect) {
     case 'moveToCenter':
