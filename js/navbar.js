@@ -19,7 +19,6 @@ logoText.innerHTML = "<a href='./'>" + logo + "</a>"
 // ----- 모바일 뷰포트 계산 -----
 
 let vh = window.innerHeight * 0.01;
-if (document.querySelector('#player')) {let vw = document.querySelector('#player').clientWidth * 0.01;}
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 // 리사이즈
