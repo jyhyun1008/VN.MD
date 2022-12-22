@@ -6,10 +6,14 @@
     --navbar: #090f1b;
 }
 
-body {
-    background-color: #000;
-    background-size: cover;
-    background-position: center;
+#background {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	z-index: -1;
+    	background-color: #000;
+    	background-size: cover;
+    	background-position: center;
 }
 
 #player {
