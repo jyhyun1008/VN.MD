@@ -1,6 +1,8 @@
 
 function parseMd(md){
   
+    var md0 = md;
+  
     //ul
     md = md.replace(/^\s*\n\*\s/gm, '<ul>\n* ');
     md = md.replace(/^(\*\s.+)\s*\n([^\*])/gm, '$1\n</ul>\n\n$2');
@@ -55,7 +57,7 @@ function parseMd(md){
 
     var diff = [0]
 
-    while( (pos1 = raw.indexOf('\n```', pos1 + 1)) != -1 ) { 
+    while( (pos1 = md0.indexOf('\n```', pos1 + 1)) != -1 ) { 
         if (k % 2 == 0){
             rawpos[k] = pos1 + 4;
         } else {
@@ -79,7 +81,7 @@ function parseMd(md){
 
     for (var i = 0; i < mdpos.length; i++){
         if (i % 2 == 0){
-            md = md.replace(md.substring(mdpos[i] - diff[i], mdpos[i+1] - diff[i]), '<pre class="code">'+raw.substring(rawpos[i], rawpos[i+1])+'</pre>');
+            md = md.replace(md.substring(mdpos[i] - diff[i], mdpos[i+1] - diff[i]), '<pre class="code">'+md0.substring(rawpos[i], rawpos[i+1])+'</pre>');
 
             var mdSubStringLength = mdpos[i+1] - mdpos[i];
             var rawSubStringLength = rawpos[i+1] - rawpos[i] + '<pre class="code">'.length + '</pre>'.length;
