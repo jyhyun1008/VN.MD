@@ -88,12 +88,14 @@ if (ep) {
                 none();
             }
             //bgm, sound
-            if (bgmArray[j] && bgmArray[j] != bgmArray[formerj]) {
-                bgmArray[formerj].pause(); bgmArray[j].play();
-            } else if (!bgmArray[j]) {
-                bgmArray[j] = new Audio(); bgmArray[formerj].pause();
-            } if (soundArray[j]) {
-                soundArray[j].loop = false; soundArray[j].play();
+            if (muteBool == false) {
+                if (bgmArray[j] && bgmArray[j] != bgmArray[formerj]) {
+                    bgmArray[formerj].pause(); bgmArray[j].play();
+                } else if (!bgmArray[j]) {
+                    bgmArray[j] = new Audio(); bgmArray[formerj].pause();
+                } if (soundArray[j]) {
+                    soundArray[j].loop = false; soundArray[j].play();
+                }
             }
             //TITLE
             if (titleArray[j]){
@@ -137,14 +139,31 @@ if (ep) {
                 }
             }
         } 
+        var muteBool = false;
+        var typingBool = false;
+        var confirm1 = false;
+        
         pageLoad(j, 0);
         
         raw.addEventListener("click", function(){ window.location.href = './index.html?raw='+ep;});
+        mute.addEventListener("click", function(){
+            if (muteBool == false){
+                muteBool = true;
+                if (bgmArray[j]) {
+                    bgmArray[j].pause();
+                } 
+                if (soundArray[j]) {
+                    soundArray[j].pause();
+                }
+            } else {
+                muteBool = false;
+                if (bgmArray[j]) {
+                    bgmArray[j].play();
+                }
+            }
+        });
 
         document.documentElement.style.setProperty('--theme', `${options.theme}`);
-
-        var typingBool = false;
-        var confirm1 = false;
 
         this.document.body.addEventListener("keydown", function(event){
             switch(event.keyCode){
@@ -235,7 +254,7 @@ if (ep) {
 
             if(typingBool1==true){ 
                 // 타이핑이 진행되지 않았다면 
-                typingBool1=false;     
+                typingBool1=false;
                 line1.innerHTML = '';
                 line2.innerHTML = '';
                 line3.innerHTML = '';
