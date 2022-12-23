@@ -137,8 +137,8 @@ if (!page && !raw && !ep) {
     })
     .catch(err => { throw err });
 } else if (raw) {
-    var url = "https://raw.githubusercontent.com/"+user+"/"+repo+"/main/ep/"+ep+".md";
-    document.querySelector("#post").innerHTML += '<a href="./index.html?ep='+ep+'">플레이어 보기</a>'
+    var url = "https://raw.githubusercontent.com/"+user+"/"+repo+"/main/ep/"+raw+".md";
+    document.querySelector("#post").innerHTML += '<a href="./index.html?ep='+raw+'">플레이어 보기</a>'
     fetch(url)
     .then(res => res.text())
     .then((out) => {
