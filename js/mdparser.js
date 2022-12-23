@@ -1,7 +1,5 @@
 
 function parseMd(md){
-
-    raw = md;
   
     //ul
     md = md.replace(/^\s*\n\*\s/gm, '<ul>\n* ');
