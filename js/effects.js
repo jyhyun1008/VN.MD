@@ -68,7 +68,7 @@ function moveToRight(chrId){
   window.requestAnimationFrame(step);
 }
 
-function moveToleft(chrId){
+function moveToLeft(chrId){
   var start = null;
   const startP = document.querySelector(chrId).offsetLeft;
   const endP = -400;
