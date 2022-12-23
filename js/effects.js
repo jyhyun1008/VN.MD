@@ -92,8 +92,8 @@ function passToRight(chrId){
   function step(timestamp) {
     if (!start) start = timestamp;
     var progress = timestamp - start;
-    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/500) + 'px';
-    if (progress < 500) {
+    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
+    if (progress < 1000) {
       window.requestAnimationFrame(step);
     } 
   }
@@ -108,8 +108,8 @@ function passToLeft(chrId){
   function step(timestamp) {
     if (!start) start = timestamp;
     var progress = timestamp - start;
-    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/500) + 'px';
-    if (progress < 500) {
+    document.querySelector(chrId).style.left = (startP + (endP - startP) * progress/1000) + 'px';
+    if (progress < 1000) {
       window.requestAnimationFrame(step);
     } 
   }
@@ -152,10 +152,10 @@ function chr_eff(chrId, effect){
       moveToRight(chrId);
       break;
     case 'passToLeft':
-      moveToLeft(chrId);
+      passToLeft(chrId);
       break;
     case 'passToRight':
-      moveToRight(chrId);
+      passToRight(chrId);
       break;
     case 'jump':
       jump(chrId);
