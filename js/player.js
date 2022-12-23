@@ -149,6 +149,7 @@ if (ep) {
         mute.addEventListener("click", function(){
             if (muteBool == false){
                 muteBool = true;
+                mute.innerHTML = "<i class='bx bxs-volume-full'></i>";
                 if (bgmArray[j]) {
                     bgmArray[j].pause();
                 } 
@@ -157,6 +158,7 @@ if (ep) {
                 }
             } else {
                 muteBool = false;
+                mute.innerHTML = "<i class='bx bxs-volume-mute'></i>";
                 if (bgmArray[j]) {
                     bgmArray[j].play();
                 }
