@@ -75,7 +75,7 @@ if (ep) {
             }
         }
 
-        function bgPreload(chrSrcArray, facialSrcArray) {
+        function chrPreload(chrSrcArray, facialSrcArray) {
             for(var k = 0; k < chrSrcArray.length; k++) {
                 loadedChrImages[k] = [];
                 for(var l = 0; l < facialSrcArray.length; l++){
@@ -87,6 +87,8 @@ if (ep) {
         }
 
         bgPreload(Object.values(options.bg));
+        
+        chrPreload(Object.values(options.chr), Object.values(options.chr_facial));
         
         j = 0;
         function pageLoad(j, formerj) {
