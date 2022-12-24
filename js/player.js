@@ -64,6 +64,17 @@ if (ep) {
         console.log(code);
         eval(code);
         
+        let loadedImages = [];
+
+        function preload(srcArray) {
+          for(let i = 0; i < preload.lenght; i++) {
+            loadedImages[i] = new Image();
+            loadedImages[i].src = "./assets/bg"+preload.srcArray[i]+".png";
+          }
+        }
+
+        preload(Object.values(options.bg))
+        
         j = 0;
         function pageLoad(j, formerj) {
             var bgm = []; 
