@@ -67,9 +67,9 @@ if (ep) {
         let loadedImages = [];
 
         function preload(srcArray) {
-          for(let i = 0; i < preload.lenght; i++) {
+          for(let i = 0; i < srcArray.lenght; i++) {
             loadedImages[i] = new Image();
-            loadedImages[i].src = "./assets/bg"+preload.srcArray[i]+".png";
+            loadedImages[i].src = "./assets/bg"+srcArray[i]+".png";
           }
         }
 
