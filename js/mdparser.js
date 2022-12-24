@@ -20,6 +20,7 @@ function parseMd(md){
     
     //blockquote
     md = md.replace(/^\>(.+)/gm, '<blockquote>$1</blockquote>');
+    md = md.replace('</blockquote><blockquote>', '');
     md = md.replace('</blockquote>\n<blockquote>', '');
 
     //hr
