@@ -1,7 +1,7 @@
 
 # MOVEL
 
-![아이콘](https://github.com/jyhyun1008/VN.MD/raw/main/vnmd.png)
+![아이콘](https://github.com/jyhyun1008/movel/raw/main/assets/icon.png)
 
 > Markdown for Visual Novel
 
