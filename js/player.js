@@ -64,17 +64,29 @@ if (ep) {
         console.log(code);
         eval(code);
         
-        var loadedImages = [];
+        var loadedBgImages = [];
+        var loadedChrImages = [];
 
-        function preload(srcArray) {
-          for(var k = 0; k < srcArray.length; k++) {
-            loadedImages[k] = new Image();
-            loadedImages[k].src = "./assets/bg/"+srcArray[k]+".png";
-            console.log(loadedImages[k].src);
-          }
+        function bgPreload(srcArray) {
+            for(var k = 0; k < srcArray.length; k++) {
+                loadedBgImages[k] = new Image();
+                loadedBgImages[k].src = "./assets/bg/"+srcArray[k]+".png";
+                console.log(loadedBgImages[k].src);
+            }
         }
 
-        preload(Object.values(options.bg))
+        function bgPreload(chrSrcArray, facialSrcArray) {
+            for(var k = 0; k < chrSrcArray.length; k++) {
+                loadedChrImages[k] = [];
+                for(var l = 0; l < facialSrcArray.length; l++){
+                    loadedChrImages[k][l] = new Image();
+                    loadedChrImages[k][l].src = "./assets/chr/"+chrSrcArray[k]+"/"+facialSrcArray[l]+".png";
+                    console.log(loadedChrImages[k][l].src);
+               }
+            }
+        }
+
+        bgPreload(Object.values(options.bg));
         
         j = 0;
         function pageLoad(j, formerj) {
