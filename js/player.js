@@ -64,13 +64,13 @@ if (ep) {
         console.log(code);
         eval(code);
         
-        let loadedImages = [];
+        var loadedImages = [];
 
         function preload(srcArray) {
-          for(let i = 0; i < srcArray.lenght; i++) {
-            loadedImages[i] = new Image();
-            loadedImages[i].src = "./assets/bg/"+srcArray[i]+".png";
-            console.log(loadedImages[i].src);
+          for(var k = 0; k < srcArray.length; k++) {
+            loadedImages[k] = new Image();
+            loadedImages[k].src = "./assets/bg/"+srcArray[k]+".png";
+            console.log(loadedImages[k].src);
           }
         }
 
