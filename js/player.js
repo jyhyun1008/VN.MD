@@ -69,7 +69,8 @@ if (ep) {
         function preload(srcArray) {
           for(let i = 0; i < srcArray.lenght; i++) {
             loadedImages[i] = new Image();
-            loadedImages[i].src = "./assets/bg"+srcArray[i]+".png";
+            loadedImages[i].src = "./assets/bg/"+srcArray[i]+".png";
+            console.log(loadedImages[i].src);
           }
         }
 
