@@ -27,7 +27,6 @@
 	box-sizing: border-box;
         font-size: 16px;
         line-height: 1.5rem;
-	letter-spacing: 0.05rem;
 }
 
 body::-webkit-scrollbar {
